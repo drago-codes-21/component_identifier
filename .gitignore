@@ -1,0 +1,27 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
+
+# IDEs/editors
+.vscode/
+.idea/
+.DS_Store
+
+# Hugging Face model artifacts (large files)
+models/**
+!models/.gitkeep
+
+# Training caches/checkpoints
+**/checkpoint-*/
+
+# Excel temp files
+data/~$*.xlsx
+
+# Logs
+logs/
+*.log
+data/*.xlsx
