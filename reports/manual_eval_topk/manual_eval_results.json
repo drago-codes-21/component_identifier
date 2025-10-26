@@ -1,0 +1,5192 @@
+{
+  "summary": {
+    "total_cases": 100,
+    "match_counts": {
+      "partial": 71,
+      "miss": 29
+    },
+    "precision": 0.3128205128205128,
+    "recall": 0.305,
+    "f1": 0.3088607594936709,
+    "subset_accuracy": 0.0,
+    "tp": 122,
+    "fp": 268,
+    "fn": 278
+  },
+  "results": [
+    {
+      "id": "AUTH01",
+      "text": "As a fintech reseller, I need biometric fallback when reset links expire while commuting with spotty LTE coverage, so that I avoid locking out revenue-critical users.",
+      "expected": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Customer_Portal_UI",
+        "SMS_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.3133,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.068,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.067,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "Authentication_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Stress login resilience plus outbound confirmations. Stakeholder focus: a fintech reseller."
+    },
+    {
+      "id": "AUTH02",
+      "text": "As a regional operations lead, I need instant OTP escalation if the authenticator app fails while supporting offshore teams overnight, so that support queues do not spike after fraud sweeps.",
+      "expected": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "Agent_Dashboard"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.6853,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.5538,
+          "source": "threshold"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0166,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0089,
+          "source": "fallback"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.0078,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "Agent_Dashboard",
+        "Email_Communication_Module"
+      ],
+      "false_negatives": [
+        "Authentication_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Stress login resilience plus outbound confirmations. Stakeholder focus: a regional operations lead."
+    },
+    {
+      "id": "AUTH03",
+      "text": "As a regional operations lead, I need to re-verify my identity within sixty seconds while commuting with spotty LTE coverage, so that mobile CSAT scores hold steady.",
+      "expected": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "predicted": [
+        "SMS_Service",
+        "Notification_Engine",
+        "Email_Communication_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "SMS_Service",
+          "score": 0.4232,
+          "source": "fallback"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.4043,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0406,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "Email_Communication_Module"
+      ],
+      "false_negatives": [
+        "Authentication_Service",
+        "Customer_Portal_UI"
+      ],
+      "match_type": "partial",
+      "rationale": "Stress login resilience plus outbound confirmations. Stakeholder focus: a regional operations lead."
+    },
+    {
+      "id": "AUTH04",
+      "text": "As a regional operations lead, I need to re-verify my identity within sixty seconds while onboarding merchants from shared kiosks, so that mobile CSAT scores hold steady.",
+      "expected": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Email_Communication_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.3703,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.298,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0473,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "Email_Communication_Module"
+      ],
+      "false_negatives": [
+        "Authentication_Service",
+        "Customer_Portal_UI"
+      ],
+      "match_type": "partial",
+      "rationale": "Stress login resilience plus outbound confirmations. Stakeholder focus: a regional operations lead."
+    },
+    {
+      "id": "AUTH05",
+      "text": "As a fintech reseller, I need adaptive MFA when device posture looks risky while switching between corporate VPNs, so that regional launches are not blocked by SMS delays.",
+      "expected": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Customer_Portal_UI",
+        "API_Gateway"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.6444,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.4865,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.1063,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0359,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "API_Gateway"
+      ],
+      "false_negatives": [
+        "Authentication_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Stress login resilience plus outbound confirmations. Stakeholder focus: a fintech reseller."
+    },
+    {
+      "id": "AUTH06",
+      "text": "As a field collections officer, I need adaptive MFA when device posture looks risky while switching between corporate VPNs, so that support queues do not spike after fraud sweeps.",
+      "expected": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "API_Gateway",
+        "Rule_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.7547,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.0646,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0455,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0399,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "API_Gateway",
+        "Rule_Engine"
+      ],
+      "false_negatives": [
+        "Authentication_Service",
+        "Customer_Portal_UI"
+      ],
+      "match_type": "partial",
+      "rationale": "Stress login resilience plus outbound confirmations. Stakeholder focus: a field collections officer."
+    },
+    {
+      "id": "AUTH07",
+      "text": "As a treasury admin, I need adaptive MFA when device posture looks risky while assisting customers on low-cost Android devices, so that I avoid locking out revenue-critical users.",
+      "expected": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Customer_Portal_UI",
+        "API_Gateway"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.7596,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1004,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.064,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.039,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "API_Gateway"
+      ],
+      "false_negatives": [
+        "Authentication_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Stress login resilience plus outbound confirmations. Stakeholder focus: a treasury admin."
+    },
+    {
+      "id": "AUTH08",
+      "text": "As a regional operations lead, I need adaptive MFA when device posture looks risky while commuting with spotty LTE coverage, so that support queues do not spike after fraud sweeps.",
+      "expected": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "API_Gateway",
+        "Rule_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.8776,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1569,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0419,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0319,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "API_Gateway",
+        "Rule_Engine"
+      ],
+      "false_negatives": [
+        "Authentication_Service",
+        "Customer_Portal_UI"
+      ],
+      "match_type": "partial",
+      "rationale": "Stress login resilience plus outbound confirmations. Stakeholder focus: a regional operations lead."
+    },
+    {
+      "id": "AUTH09",
+      "text": "As a regional operations lead, I need biometric fallback when reset links expire while switching between corporate VPNs, so that support queues do not spike after fraud sweeps.",
+      "expected": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Agent_Dashboard"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.3123,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.0526,
+          "source": "fallback"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.0152,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "Agent_Dashboard"
+      ],
+      "false_negatives": [
+        "Authentication_Service",
+        "Customer_Portal_UI"
+      ],
+      "match_type": "partial",
+      "rationale": "Stress login resilience plus outbound confirmations. Stakeholder focus: a regional operations lead."
+    },
+    {
+      "id": "AUTH10",
+      "text": "As a field collections officer, I need adaptive MFA when device posture looks risky while supporting offshore teams overnight, so that support queues do not spike after fraud sweeps.",
+      "expected": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "API_Gateway",
+        "Rule_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.8584,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.0887,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.026,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0159,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "API_Gateway",
+        "Rule_Engine"
+      ],
+      "false_negatives": [
+        "Authentication_Service",
+        "Customer_Portal_UI"
+      ],
+      "match_type": "partial",
+      "rationale": "Stress login resilience plus outbound confirmations. Stakeholder focus: a field collections officer."
+    },
+    {
+      "id": "LOAN01",
+      "text": "As a virtual loan advisor, I need to mix alternative data into scorecards during seasonal farming peaks, so that we keep approval SLAs under five minutes.",
+      "expected": [
+        "Loan_Module",
+        "Credit_Score_Engine",
+        "Rule_Engine",
+        "Notification_Engine"
+      ],
+      "predicted": [
+        "Data_Warehouse",
+        "Customer_Profile_Service",
+        "Reporting_Service",
+        "Notification_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Data_Warehouse",
+          "score": 0.5231,
+          "source": "threshold"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.2918,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.1315,
+          "source": "fallback"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.0283,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Customer_Profile_Service",
+        "Data_Warehouse",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Credit_Score_Engine",
+        "Loan_Module",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a virtual loan advisor."
+    },
+    {
+      "id": "LOAN02",
+      "text": "As a branch lending manager, I need to auto-hold risky restructures for review when market rates jump mid-day, so that offer uptake improves for mid-market clients.",
+      "expected": [
+        "Loan_Module",
+        "Credit_Score_Engine",
+        "Rule_Engine",
+        "Notification_Engine"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Data_Warehouse",
+        "Customer_Profile_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.1357,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0648,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.0599,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Customer_Profile_Service",
+        "Data_Warehouse"
+      ],
+      "false_negatives": [
+        "Credit_Score_Engine",
+        "Loan_Module",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a branch lending manager."
+    },
+    {
+      "id": "LOAN03",
+      "text": "As a small-business risk analyst, I need instant affordability checks for upsell bundles during weekend bulk campaigns, so that offer uptake improves for mid-market clients.",
+      "expected": [
+        "Loan_Module",
+        "Credit_Score_Engine",
+        "Rule_Engine",
+        "Notification_Engine"
+      ],
+      "predicted": [
+        "Data_Warehouse",
+        "Notification_Engine",
+        "Customer_Profile_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Data_Warehouse",
+          "score": 0.3568,
+          "source": "fallback"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.0557,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.0251,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Customer_Profile_Service",
+        "Data_Warehouse"
+      ],
+      "false_negatives": [
+        "Credit_Score_Engine",
+        "Loan_Module",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a small-business risk analyst."
+    },
+    {
+      "id": "LOAN04",
+      "text": "As a partner bank underwriter, I need refreshed bureau pulls before presenting offers during seasonal farming peaks, so that offer uptake improves for mid-market clients.",
+      "expected": [
+        "Loan_Module",
+        "Credit_Score_Engine",
+        "Rule_Engine",
+        "Notification_Engine"
+      ],
+      "predicted": [
+        "Data_Warehouse",
+        "Customer_Profile_Service",
+        "Reporting_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Data_Warehouse",
+          "score": 0.2087,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.0482,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.046,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Customer_Profile_Service",
+        "Data_Warehouse",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Credit_Score_Engine",
+        "Loan_Module",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a partner bank underwriter."
+    },
+    {
+      "id": "LOAN05",
+      "text": "As a virtual loan advisor, I need to notify brokers when counter-offers are ready while customers navigate self-service flows, so that we keep approval SLAs under five minutes.",
+      "expected": [
+        "Loan_Module",
+        "Credit_Score_Engine",
+        "Rule_Engine",
+        "Notification_Engine"
+      ],
+      "predicted": [
+        "SMS_Service",
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "Agent_Dashboard"
+      ],
+      "prediction_details": [
+        {
+          "label": "SMS_Service",
+          "score": 0.7946,
+          "source": "threshold"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.435,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.1329,
+          "source": "fallback"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.0366,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Agent_Dashboard",
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Credit_Score_Engine",
+        "Loan_Module",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a virtual loan advisor."
+    },
+    {
+      "id": "LOAN06",
+      "text": "As a partner bank underwriter, I need instant affordability checks for upsell bundles when market rates jump mid-day, so that brokers stop calling for manual status.",
+      "expected": [
+        "Loan_Module",
+        "Credit_Score_Engine",
+        "Rule_Engine",
+        "Notification_Engine"
+      ],
+      "predicted": [
+        "Data_Warehouse",
+        "Loan_Module",
+        "Reporting_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Data_Warehouse",
+          "score": 0.2036,
+          "source": "fallback"
+        },
+        {
+          "label": "Loan_Module",
+          "score": 0.0432,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.0318,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Loan_Module"
+      ],
+      "false_positives": [
+        "Data_Warehouse",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Credit_Score_Engine",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a partner bank underwriter."
+    },
+    {
+      "id": "LOAN07",
+      "text": "As a partner bank underwriter, I need refreshed bureau pulls before presenting offers while customers navigate self-service flows, so that we avoid issuing loans outside policy.",
+      "expected": [
+        "Loan_Module",
+        "Credit_Score_Engine",
+        "Rule_Engine",
+        "Notification_Engine"
+      ],
+      "predicted": [
+        "Loan_Module",
+        "Reporting_Service",
+        "Data_Warehouse"
+      ],
+      "prediction_details": [
+        {
+          "label": "Loan_Module",
+          "score": 0.2424,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.1101,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0744,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Loan_Module"
+      ],
+      "false_positives": [
+        "Data_Warehouse",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Credit_Score_Engine",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a partner bank underwriter."
+    },
+    {
+      "id": "LOAN08",
+      "text": "As a servicing specialist, I need to mix alternative data into scorecards during seasonal farming peaks, so that offer uptake improves for mid-market clients.",
+      "expected": [
+        "Loan_Module",
+        "Credit_Score_Engine",
+        "Rule_Engine",
+        "Notification_Engine"
+      ],
+      "predicted": [
+        "Data_Warehouse",
+        "Customer_Profile_Service",
+        "Reporting_Service",
+        "Credit_Score_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Data_Warehouse",
+          "score": 0.7367,
+          "source": "threshold"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.2406,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.1169,
+          "source": "fallback"
+        },
+        {
+          "label": "Credit_Score_Engine",
+          "score": 0.041,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Credit_Score_Engine"
+      ],
+      "false_positives": [
+        "Customer_Profile_Service",
+        "Data_Warehouse",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Loan_Module",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a servicing specialist."
+    },
+    {
+      "id": "LOAN09",
+      "text": "As a small-business risk analyst, I need refreshed bureau pulls before presenting offers when market rates jump mid-day, so that regulators see consistent decision logic.",
+      "expected": [
+        "Loan_Module",
+        "Credit_Score_Engine",
+        "Rule_Engine",
+        "Notification_Engine"
+      ],
+      "predicted": [
+        "Data_Warehouse",
+        "Notification_Engine",
+        "Reporting_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Data_Warehouse",
+          "score": 0.2686,
+          "source": "fallback"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.0379,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.024,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Data_Warehouse",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Credit_Score_Engine",
+        "Loan_Module",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a small-business risk analyst."
+    },
+    {
+      "id": "LOAN10",
+      "text": "As a branch lending manager, I need refreshed bureau pulls before presenting offers when market rates jump mid-day, so that brokers stop calling for manual status.",
+      "expected": [
+        "Loan_Module",
+        "Credit_Score_Engine",
+        "Rule_Engine",
+        "Notification_Engine"
+      ],
+      "predicted": [
+        "Email_Communication_Module",
+        "Data_Warehouse",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0382,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0345,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0301,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Data_Warehouse",
+        "Dispute_Management",
+        "Email_Communication_Module"
+      ],
+      "false_negatives": [
+        "Credit_Score_Engine",
+        "Loan_Module",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a branch lending manager."
+    },
+    {
+      "id": "COLL01",
+      "text": "As a recoveries director, I need to pause outreach when disputes open while managing bilingual borrower bases, so that legal partners avoid duplicate outreach.",
+      "expected": [
+        "Collections_Workflow",
+        "Rule_Engine",
+        "Notification_Engine",
+        "Email_Communication_Module"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Dispute_Management",
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.6438,
+          "source": "threshold"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.4731,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.3529,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1645,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Email_Communication_Module",
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Dispute_Management",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Collections_Workflow",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Collections triage with policy-aware outreach. Stakeholder focus: a recoveries director."
+    },
+    {
+      "id": "COLL02",
+      "text": "As a customer success lead, I need to pause outreach when disputes open when regional compliance wording changes midweek, so that regulators see fair-treatment evidence.",
+      "expected": [
+        "Collections_Workflow",
+        "Rule_Engine",
+        "Notification_Engine",
+        "Email_Communication_Module"
+      ],
+      "predicted": [
+        "Dispute_Management",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Notification_Engine",
+        "Document_Upload_Service",
+        "Transaction_History_Service",
+        "KYC_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Dispute_Management",
+          "score": 0.7218,
+          "source": "threshold"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.6687,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.5299,
+          "source": "threshold"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.5171,
+          "source": "threshold"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.0168,
+          "source": "fallback"
+        },
+        {
+          "label": "Transaction_History_Service",
+          "score": 0.0068,
+          "source": "fallback"
+        },
+        {
+          "label": "KYC_Service",
+          "score": 0.0049,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Email_Communication_Module",
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Dispute_Management",
+        "Document_Upload_Service",
+        "KYC_Service",
+        "SMS_Service",
+        "Transaction_History_Service"
+      ],
+      "false_negatives": [
+        "Collections_Workflow",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Collections triage with policy-aware outreach. Stakeholder focus: a customer success lead."
+    },
+    {
+      "id": "COLL03",
+      "text": "As a recoveries director, I need to reassign queues when agents are offline while operating across four time zones, so that charge-off rates stabilize for micro-loans.",
+      "expected": [
+        "Collections_Workflow",
+        "Rule_Engine",
+        "Notification_Engine",
+        "Email_Communication_Module"
+      ],
+      "predicted": [
+        "Agent_Dashboard",
+        "Reporting_Service",
+        "Data_Warehouse"
+      ],
+      "prediction_details": [
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.0382,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.0355,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0182,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Agent_Dashboard",
+        "Data_Warehouse",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Collections_Workflow",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Collections triage with policy-aware outreach. Stakeholder focus: a recoveries director."
+    },
+    {
+      "id": "COLL04",
+      "text": "As a customer success lead, I need softer tone templates for community lending programs when regional compliance wording changes midweek, so that charge-off rates stabilize for micro-loans.",
+      "expected": [
+        "Collections_Workflow",
+        "Rule_Engine",
+        "Notification_Engine",
+        "Email_Communication_Module"
+      ],
+      "predicted": [
+        "Loan_Module",
+        "Reporting_Service",
+        "Email_Communication_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Loan_Module",
+          "score": 0.4337,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.3611,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.1048,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Email_Communication_Module"
+      ],
+      "false_positives": [
+        "Loan_Module",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Collections triage with policy-aware outreach. Stakeholder focus: a customer success lead."
+    },
+    {
+      "id": "COLL05",
+      "text": "As an early-stage collections agent, I need to pause outreach when disputes open when SMS delivery is throttled by carriers, so that charge-off rates stabilize for micro-loans.",
+      "expected": [
+        "Collections_Workflow",
+        "Rule_Engine",
+        "Notification_Engine",
+        "Email_Communication_Module"
+      ],
+      "predicted": [
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI",
+        "Dispute_Management",
+        "Loan_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.9033,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.5205,
+          "source": "threshold"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0901,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0699,
+          "source": "fallback"
+        },
+        {
+          "label": "Loan_Module",
+          "score": 0.046,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Email_Communication_Module"
+      ],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "Dispute_Management",
+        "Loan_Module",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Collections triage with policy-aware outreach. Stakeholder focus: an early-stage collections agent."
+    },
+    {
+      "id": "COLL06",
+      "text": "As an early-stage collections agent, I need to pause outreach when disputes open when SMS delivery is throttled by carriers, so that agents focus on accounts that matter most.",
+      "expected": [
+        "Collections_Workflow",
+        "Rule_Engine",
+        "Notification_Engine",
+        "Email_Communication_Module"
+      ],
+      "predicted": [
+        "SMS_Service",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "Customer_Portal_UI",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "SMS_Service",
+          "score": 0.9412,
+          "source": "threshold"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.7674,
+          "source": "threshold"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.2721,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.1341,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0802,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Email_Communication_Module",
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "Dispute_Management",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Collections_Workflow",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Collections triage with policy-aware outreach. Stakeholder focus: an early-stage collections agent."
+    },
+    {
+      "id": "COLL07",
+      "text": "As a recoveries director, I need to escalate high-risk accounts to legal automatically during holiday moratoriums, so that charge-off rates stabilize for micro-loans.",
+      "expected": [
+        "Collections_Workflow",
+        "Rule_Engine",
+        "Notification_Engine",
+        "Email_Communication_Module"
+      ],
+      "predicted": [
+        "Loan_Module",
+        "Reporting_Service",
+        "Data_Warehouse"
+      ],
+      "prediction_details": [
+        {
+          "label": "Loan_Module",
+          "score": 0.2912,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.2486,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.1305,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Data_Warehouse",
+        "Loan_Module",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Collections_Workflow",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Collections triage with policy-aware outreach. Stakeholder focus: a recoveries director."
+    },
+    {
+      "id": "COLL08",
+      "text": "As a customer success lead, I need to trigger hardship plans after two returned payments while managing bilingual borrower bases, so that charge-off rates stabilize for micro-loans.",
+      "expected": [
+        "Collections_Workflow",
+        "Rule_Engine",
+        "Notification_Engine",
+        "Email_Communication_Module"
+      ],
+      "predicted": [
+        "Loan_Module",
+        "Payment_Gateway",
+        "Reporting_Service",
+        "Email_Communication_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Loan_Module",
+          "score": 0.7012,
+          "source": "threshold"
+        },
+        {
+          "label": "Payment_Gateway",
+          "score": 0.3209,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.2477,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0755,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Email_Communication_Module"
+      ],
+      "false_positives": [
+        "Loan_Module",
+        "Payment_Gateway",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Collections triage with policy-aware outreach. Stakeholder focus: a customer success lead."
+    },
+    {
+      "id": "COLL09",
+      "text": "As a legal collections partner, I need to pause outreach when disputes open when SMS delivery is throttled by carriers, so that charge-off rates stabilize for micro-loans.",
+      "expected": [
+        "Collections_Workflow",
+        "Rule_Engine",
+        "Notification_Engine",
+        "Email_Communication_Module"
+      ],
+      "predicted": [
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI",
+        "Loan_Module",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.9165,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.6003,
+          "source": "threshold"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.1764,
+          "source": "fallback"
+        },
+        {
+          "label": "Loan_Module",
+          "score": 0.0616,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0502,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Email_Communication_Module"
+      ],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "Dispute_Management",
+        "Loan_Module",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Collections triage with policy-aware outreach. Stakeholder focus: a legal collections partner."
+    },
+    {
+      "id": "COLL10",
+      "text": "As a legal collections partner, I need to escalate high-risk accounts to legal automatically while operating across four time zones, so that charge-off rates stabilize for micro-loans.",
+      "expected": [
+        "Collections_Workflow",
+        "Rule_Engine",
+        "Notification_Engine",
+        "Email_Communication_Module"
+      ],
+      "predicted": [
+        "Data_Warehouse",
+        "Reporting_Service",
+        "Loan_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Data_Warehouse",
+          "score": 0.3233,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.1776,
+          "source": "fallback"
+        },
+        {
+          "label": "Loan_Module",
+          "score": 0.1684,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Data_Warehouse",
+        "Loan_Module",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Collections_Workflow",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Collections triage with policy-aware outreach. Stakeholder focus: a legal collections partner."
+    },
+    {
+      "id": "KYC01",
+      "text": "As a franchise compliance officer, I need to tag politically exposed persons quickly while coordinating bilingual review teams, so that regulators trust the audit trail.",
+      "expected": [
+        "KYC_Service",
+        "Document_Upload_Service",
+        "Customer_Profile_Service",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Dispute_Management",
+        "SMS_Service",
+        "Email_Communication_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.8351,
+          "source": "threshold"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.3867,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1651,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.1242,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Dispute_Management",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Customer_Profile_Service",
+        "Document_Upload_Service",
+        "KYC_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Onboarding workflows with human-in-loop visibility. Stakeholder focus: a franchise compliance officer."
+    },
+    {
+      "id": "KYC02",
+      "text": "As a cross-border payments analyst, I need dashboards showing manual review queues during quarterly regulator audits, so that agents know which customers need callbacks.",
+      "expected": [
+        "KYC_Service",
+        "Document_Upload_Service",
+        "Customer_Profile_Service",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Data_Warehouse",
+        "Transaction_History_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.0808,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0648,
+          "source": "fallback"
+        },
+        {
+          "label": "Transaction_History_Service",
+          "score": 0.0409,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Data_Warehouse",
+        "Notification_Engine",
+        "Transaction_History_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Customer_Profile_Service",
+        "Document_Upload_Service",
+        "KYC_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Onboarding workflows with human-in-loop visibility. Stakeholder focus: a cross-border payments analyst."
+    },
+    {
+      "id": "KYC03",
+      "text": "As a refugee onboarding NGO partner, I need to reopen applications when video calls drop while operating from rural cellular networks, so that agents know which customers need callbacks.",
+      "expected": [
+        "KYC_Service",
+        "Document_Upload_Service",
+        "Customer_Profile_Service",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service",
+        "API_Gateway"
+      ],
+      "prediction_details": [
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.5638,
+          "source": "threshold"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.4833,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1311,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0292,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "API_Gateway",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Customer_Profile_Service",
+        "Document_Upload_Service",
+        "KYC_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Onboarding workflows with human-in-loop visibility. Stakeholder focus: a refugee onboarding NGO partner."
+    },
+    {
+      "id": "KYC04",
+      "text": "As a cross-border payments analyst, I need dashboards showing manual review queues when kiosk cameras downgrade image quality, so that our SLA to activate SMEs stays under four hours.",
+      "expected": [
+        "KYC_Service",
+        "Document_Upload_Service",
+        "Customer_Profile_Service",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Data_Warehouse",
+        "Customer_Portal_UI"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.2044,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0947,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0296,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "Data_Warehouse",
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Customer_Profile_Service",
+        "Document_Upload_Service",
+        "KYC_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Onboarding workflows with human-in-loop visibility. Stakeholder focus: a cross-border payments analyst."
+    },
+    {
+      "id": "KYC05",
+      "text": "As a franchise compliance officer, I need reminders when passports near expiry when applicants switch between web and mobile mid-flow, so that credit committees spot risky profiles early.",
+      "expected": [
+        "KYC_Service",
+        "Document_Upload_Service",
+        "Customer_Profile_Service",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "SMS_Service",
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "Customer_Portal_UI",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "SMS_Service",
+          "score": 0.7072,
+          "source": "threshold"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.6312,
+          "source": "threshold"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.1164,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0256,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0177,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "Dispute_Management",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Customer_Profile_Service",
+        "Document_Upload_Service",
+        "KYC_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Onboarding workflows with human-in-loop visibility. Stakeholder focus: a franchise compliance officer."
+    },
+    {
+      "id": "KYC06",
+      "text": "As a refugee onboarding NGO partner, I need reminders when passports near expiry during quarterly regulator audits, so that credit committees spot risky profiles early.",
+      "expected": [
+        "KYC_Service",
+        "Document_Upload_Service",
+        "Customer_Profile_Service",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "SMS_Service",
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "Dispute_Management",
+        "Document_Upload_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "SMS_Service",
+          "score": 0.9273,
+          "source": "threshold"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.8618,
+          "source": "threshold"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.4797,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0843,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.0152,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Document_Upload_Service"
+      ],
+      "false_positives": [
+        "Dispute_Management",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Customer_Profile_Service",
+        "KYC_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Onboarding workflows with human-in-loop visibility. Stakeholder focus: a refugee onboarding NGO partner."
+    },
+    {
+      "id": "KYC07",
+      "text": "As a branch KYC supervisor, I need to reopen applications when video calls drop while operating from rural cellular networks, so that credit committees spot risky profiles early.",
+      "expected": [
+        "KYC_Service",
+        "Document_Upload_Service",
+        "Customer_Profile_Service",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.4788,
+          "source": "fallback"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.3167,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1893,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Customer_Profile_Service",
+        "Document_Upload_Service",
+        "KYC_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Onboarding workflows with human-in-loop visibility. Stakeholder focus: a branch KYC supervisor."
+    },
+    {
+      "id": "KYC08",
+      "text": "As a franchise compliance officer, I need dashboards showing manual review queues while coordinating bilingual review teams, so that our SLA to activate SMEs stays under four hours.",
+      "expected": [
+        "KYC_Service",
+        "Document_Upload_Service",
+        "Customer_Profile_Service",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Rule_Engine",
+        "SMS_Service",
+        "Agent_Dashboard"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.955,
+          "source": "threshold"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.1352,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.0755,
+          "source": "fallback"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.0703,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Agent_Dashboard"
+      ],
+      "false_positives": [
+        "Notification_Engine",
+        "Rule_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Customer_Profile_Service",
+        "Document_Upload_Service",
+        "KYC_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Onboarding workflows with human-in-loop visibility. Stakeholder focus: a franchise compliance officer."
+    },
+    {
+      "id": "KYC09",
+      "text": "As a wealth onboarding concierge, I need latency-tolerant document capture during quarterly regulator audits, so that drop-off rates shrink for remote applicants.",
+      "expected": [
+        "KYC_Service",
+        "Document_Upload_Service",
+        "Customer_Profile_Service",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Customer_Portal_UI",
+        "Document_Upload_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.3505,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0285,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.0168,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Document_Upload_Service"
+      ],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Customer_Profile_Service",
+        "KYC_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Onboarding workflows with human-in-loop visibility. Stakeholder focus: a wealth onboarding concierge."
+    },
+    {
+      "id": "KYC10",
+      "text": "As a refugee onboarding NGO partner, I need to tag politically exposed persons quickly during quarterly regulator audits, so that our SLA to activate SMEs stays under four hours.",
+      "expected": [
+        "KYC_Service",
+        "Document_Upload_Service",
+        "Customer_Profile_Service",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Dispute_Management",
+        "Email_Communication_Module",
+        "Document_Upload_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9005,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.5459,
+          "source": "threshold"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.3975,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.2713,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.0992,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Document_Upload_Service"
+      ],
+      "false_positives": [
+        "Dispute_Management",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Customer_Profile_Service",
+        "KYC_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Onboarding workflows with human-in-loop visibility. Stakeholder focus: a refugee onboarding NGO partner."
+    },
+    {
+      "id": "PAY01",
+      "text": "As a treasury settlement analyst, I need fewer false declines on 3DS challenges when acquirer SLAs degrade overnight, so that checkouts stay under two seconds.",
+      "expected": [
+        "Payment_Gateway",
+        "API_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Document_Upload_Service",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9742,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.2999,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.1123,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0517,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Dispute_Management",
+        "Document_Upload_Service",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Payment_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Payments resiliency with gateway + history signals. Stakeholder focus: a treasury settlement analyst."
+    },
+    {
+      "id": "PAY02",
+      "text": "As an e-commerce architect, I need fewer false declines on 3DS challenges while PSD2 exemptions refresh weekly, so that finance can reconcile intraday settlements.",
+      "expected": [
+        "Payment_Gateway",
+        "API_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.6601,
+          "source": "threshold"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.1969,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1541,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0679,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Dispute_Management",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Payment_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Payments resiliency with gateway + history signals. Stakeholder focus: an e-commerce architect."
+    },
+    {
+      "id": "PAY03",
+      "text": "As a marketplace CFO, I need latency dashboards per acquirer while operating multi-tenant storefronts, so that finance can reconcile intraday settlements.",
+      "expected": [
+        "Payment_Gateway",
+        "API_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Data_Warehouse",
+        "Customer_Portal_UI"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.1403,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0273,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0209,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "Data_Warehouse",
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Payment_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Payments resiliency with gateway + history signals. Stakeholder focus: a marketplace CFO."
+    },
+    {
+      "id": "PAY04",
+      "text": "As a mobility product manager, I need to push high-value receipts to history within seconds amid rolling maintenance windows, so that fraud teams keep clean audit logs.",
+      "expected": [
+        "Payment_Gateway",
+        "API_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "predicted": [
+        "Email_Communication_Module",
+        "Transaction_History_Service",
+        "Reporting_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.3108,
+          "source": "fallback"
+        },
+        {
+          "label": "Transaction_History_Service",
+          "score": 0.0838,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.0556,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Transaction_History_Service"
+      ],
+      "false_positives": [
+        "Email_Communication_Module",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Payment_Gateway",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Payments resiliency with gateway + history signals. Stakeholder focus: a mobility product manager."
+    },
+    {
+      "id": "PAY05",
+      "text": "As a gaming studio ops lead, I need to whitelist good BIN ranges quickly during holiday traffic spikes, so that support has evidence when refunds misfire.",
+      "expected": [
+        "Payment_Gateway",
+        "API_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "API_Gateway",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.8374,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.0763,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0392,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0311,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "API_Gateway"
+      ],
+      "false_positives": [
+        "Dispute_Management",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Payment_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Payments resiliency with gateway + history signals. Stakeholder focus: a gaming studio ops lead."
+    },
+    {
+      "id": "PAY06",
+      "text": "As a gaming studio ops lead, I need to push high-value receipts to history within seconds while operating multi-tenant storefronts, so that finance can reconcile intraday settlements.",
+      "expected": [
+        "Payment_Gateway",
+        "API_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "predicted": [
+        "Loan_Module",
+        "Reporting_Service",
+        "Data_Warehouse"
+      ],
+      "prediction_details": [
+        {
+          "label": "Loan_Module",
+          "score": 0.3335,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.31,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.1223,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Data_Warehouse",
+        "Loan_Module",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Payment_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Payments resiliency with gateway + history signals. Stakeholder focus: a gaming studio ops lead."
+    },
+    {
+      "id": "PAY07",
+      "text": "As a marketplace CFO, I need fewer false declines on 3DS challenges while operating multi-tenant storefronts, so that checkouts stay under two seconds.",
+      "expected": [
+        "Payment_Gateway",
+        "API_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Document_Upload_Service",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9752,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1092,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.0803,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0132,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Dispute_Management",
+        "Document_Upload_Service",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Payment_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Payments resiliency with gateway + history signals. Stakeholder focus: a marketplace CFO."
+    },
+    {
+      "id": "PAY08",
+      "text": "As a gaming studio ops lead, I need auto-retries when issuer responses timeout while PSD2 exemptions refresh weekly, so that VIP customers stop abandoning carts.",
+      "expected": [
+        "Payment_Gateway",
+        "API_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Email_Communication_Module",
+        "Dispute_Management",
+        "Payment_Gateway"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.6971,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.5561,
+          "source": "threshold"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0194,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0131,
+          "source": "fallback"
+        },
+        {
+          "label": "Payment_Gateway",
+          "score": 0.0112,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Payment_Gateway"
+      ],
+      "false_positives": [
+        "Dispute_Management",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Payments resiliency with gateway + history signals. Stakeholder focus: a gaming studio ops lead."
+    },
+    {
+      "id": "PAY09",
+      "text": "As an e-commerce architect, I need to push high-value receipts to history within seconds when acquirer SLAs degrade overnight, so that VIP customers stop abandoning carts.",
+      "expected": [
+        "Payment_Gateway",
+        "API_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "predicted": [
+        "Transaction_History_Service",
+        "Payment_Gateway",
+        "Data_Warehouse"
+      ],
+      "prediction_details": [
+        {
+          "label": "Transaction_History_Service",
+          "score": 0.1249,
+          "source": "fallback"
+        },
+        {
+          "label": "Payment_Gateway",
+          "score": 0.0746,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0716,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Payment_Gateway",
+        "Transaction_History_Service"
+      ],
+      "false_positives": [
+        "Data_Warehouse"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Payments resiliency with gateway + history signals. Stakeholder focus: an e-commerce architect."
+    },
+    {
+      "id": "PAY10",
+      "text": "As an e-commerce architect, I need to whitelist good BIN ranges quickly while PSD2 exemptions refresh weekly, so that VIP customers stop abandoning carts.",
+      "expected": [
+        "Payment_Gateway",
+        "API_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Dispute_Management",
+        "Document_Upload_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.753,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1493,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0194,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.0166,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Dispute_Management",
+        "Document_Upload_Service",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Payment_Gateway",
+        "Rule_Engine",
+        "Transaction_History_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Payments resiliency with gateway + history signals. Stakeholder focus: an e-commerce architect."
+    },
+    {
+      "id": "RPT01",
+      "text": "As a sustainability program manager, I need drilldowns by segment and delinquency when data source contracts are rate-limited, so that leadership trusts the single source of truth.",
+      "expected": [
+        "Reporting_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service",
+        "Customer_Profile_Service"
+      ],
+      "predicted": [
+        "Rule_Engine",
+        "Collections_Workflow",
+        "Agent_Dashboard",
+        "Notification_Engine",
+        "Authentication_Service",
+        "Reporting_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Rule_Engine",
+          "score": 0.9768,
+          "source": "threshold"
+        },
+        {
+          "label": "Collections_Workflow",
+          "score": 0.9231,
+          "source": "threshold"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.8857,
+          "source": "threshold"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.0781,
+          "source": "fallback"
+        },
+        {
+          "label": "Authentication_Service",
+          "score": 0.0091,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.0084,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Reporting_Service"
+      ],
+      "false_positives": [
+        "Agent_Dashboard",
+        "Authentication_Service",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "false_negatives": [
+        "Customer_Profile_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Story telling dashboards across finance datasets. Stakeholder focus: a sustainability program manager."
+    },
+    {
+      "id": "RPT02",
+      "text": "As a regulatory reporting lead, I need daily consolidated exposure reports during quarter-end close, so that audit findings drop year over year.",
+      "expected": [
+        "Reporting_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service",
+        "Customer_Profile_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.3397,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1758,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.1236,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Dispute_Management",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Customer_Profile_Service",
+        "Data_Warehouse",
+        "Reporting_Service",
+        "Transaction_History_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Story telling dashboards across finance datasets. Stakeholder focus: a regulatory reporting lead."
+    },
+    {
+      "id": "RPT03",
+      "text": "As a finance controller, I need daily consolidated exposure reports when data source contracts are rate-limited, so that carbon reporting aligns with finance data.",
+      "expected": [
+        "Reporting_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service",
+        "Customer_Profile_Service"
+      ],
+      "predicted": [
+        "Data_Warehouse",
+        "Email_Communication_Module",
+        "Loan_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Data_Warehouse",
+          "score": 0.1821,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.1132,
+          "source": "fallback"
+        },
+        {
+          "label": "Loan_Module",
+          "score": 0.0859,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Email_Communication_Module",
+        "Loan_Module"
+      ],
+      "false_negatives": [
+        "Customer_Profile_Service",
+        "Reporting_Service",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Story telling dashboards across finance datasets. Stakeholder focus: a finance controller."
+    },
+    {
+      "id": "RPT04",
+      "text": "As a regulatory reporting lead, I need daily consolidated exposure reports while auditors request evidentiary samples, so that experiment teams ship faster.",
+      "expected": [
+        "Reporting_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service",
+        "Customer_Profile_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Dispute_Management",
+        "Data_Warehouse"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.5447,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1112,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0796,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0466,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Dispute_Management",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Customer_Profile_Service",
+        "Reporting_Service",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Story telling dashboards across finance datasets. Stakeholder focus: a regulatory reporting lead."
+    },
+    {
+      "id": "RPT05",
+      "text": "As a sustainability program manager, I need daily consolidated exposure reports while merging multiple ERPs, so that experiment teams ship faster.",
+      "expected": [
+        "Reporting_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service",
+        "Customer_Profile_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Data_Warehouse",
+        "Customer_Profile_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.2981,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.2304,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.0976,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Customer_Profile_Service",
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "Reporting_Service",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Story telling dashboards across finance datasets. Stakeholder focus: a sustainability program manager."
+    },
+    {
+      "id": "RPT06",
+      "text": "As a finance controller, I need drilldowns by segment and delinquency when data source contracts are rate-limited, so that leadership trusts the single source of truth.",
+      "expected": [
+        "Reporting_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service",
+        "Customer_Profile_Service"
+      ],
+      "predicted": [
+        "Rule_Engine",
+        "Collections_Workflow",
+        "Agent_Dashboard",
+        "Notification_Engine",
+        "Authentication_Service",
+        "Reporting_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Rule_Engine",
+          "score": 0.9716,
+          "source": "threshold"
+        },
+        {
+          "label": "Collections_Workflow",
+          "score": 0.9099,
+          "source": "threshold"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.8608,
+          "source": "threshold"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.0735,
+          "source": "fallback"
+        },
+        {
+          "label": "Authentication_Service",
+          "score": 0.0086,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.0084,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Reporting_Service"
+      ],
+      "false_positives": [
+        "Agent_Dashboard",
+        "Authentication_Service",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "false_negatives": [
+        "Customer_Profile_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Story telling dashboards across finance datasets. Stakeholder focus: a finance controller."
+    },
+    {
+      "id": "RPT07",
+      "text": "As a regulatory reporting lead, I need board-ready visuals for risk committees while experimenting with new pricing levers, so that partners see their impact by corridor.",
+      "expected": [
+        "Reporting_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service",
+        "Customer_Profile_Service"
+      ],
+      "predicted": [
+        "Data_Warehouse",
+        "Reporting_Service",
+        "Rule_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Data_Warehouse",
+          "score": 0.2879,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.2051,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.1042,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Data_Warehouse",
+        "Reporting_Service"
+      ],
+      "false_positives": [
+        "Rule_Engine"
+      ],
+      "false_negatives": [
+        "Customer_Profile_Service",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Story telling dashboards across finance datasets. Stakeholder focus: a regulatory reporting lead."
+    },
+    {
+      "id": "RPT08",
+      "text": "As a finance controller, I need daily consolidated exposure reports while auditors request evidentiary samples, so that partners see their impact by corridor.",
+      "expected": [
+        "Reporting_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service",
+        "Customer_Profile_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Data_Warehouse"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.3819,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1027,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0825,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Customer_Profile_Service",
+        "Reporting_Service",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Story telling dashboards across finance datasets. Stakeholder focus: a finance controller."
+    },
+    {
+      "id": "RPT09",
+      "text": "As a sustainability program manager, I need board-ready visuals for risk committees while auditors request evidentiary samples, so that leadership trusts the single source of truth.",
+      "expected": [
+        "Reporting_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service",
+        "Customer_Profile_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Data_Warehouse",
+        "Reporting_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.2998,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0951,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.0788,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Data_Warehouse",
+        "Reporting_Service"
+      ],
+      "false_positives": [
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "Customer_Profile_Service",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Story telling dashboards across finance datasets. Stakeholder focus: a sustainability program manager."
+    },
+    {
+      "id": "RPT10",
+      "text": "As a regulatory reporting lead, I need board-ready visuals for risk committees during quarter-end close, so that partners see their impact by corridor.",
+      "expected": [
+        "Reporting_Service",
+        "Data_Warehouse",
+        "Transaction_History_Service",
+        "Customer_Profile_Service"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Data_Warehouse",
+        "Rule_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.3535,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.1397,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0634,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Notification_Engine",
+        "Rule_Engine"
+      ],
+      "false_negatives": [
+        "Customer_Profile_Service",
+        "Reporting_Service",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Story telling dashboards across finance datasets. Stakeholder focus: a regulatory reporting lead."
+    },
+    {
+      "id": "DSP01",
+      "text": "As a dispute analyst, I need to suppress payment reminders for accounts in dispute during schemes' shortened response windows, so that merchant churn drops despite spikes.",
+      "expected": [
+        "Dispute_Management",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Email_Communication_Module",
+        "Customer_Portal_UI",
+        "SMS_Service",
+        "Transaction_History_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.9466,
+          "source": "threshold"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.1091,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.084,
+          "source": "fallback"
+        },
+        {
+          "label": "Transaction_History_Service",
+          "score": 0.0614,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Transaction_History_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Dispute_Management",
+        "Notification_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Cross-team dispute visibility with alerts. Stakeholder focus: a dispute analyst."
+    },
+    {
+      "id": "DSP02",
+      "text": "As a chargeback operations lead, I need SLA timers visible to every agent while handling multilingual attachments, so that collections does not double-contact stressed customers.",
+      "expected": [
+        "Dispute_Management",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Customer_Portal_UI"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9403,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.7072,
+          "source": "threshold"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.0912,
+          "source": "fallback"
+        },
+        {
+          "label": "Collections_Workflow",
+          "score": 0.0281,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0147,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Dispute_Management"
+      ],
+      "match_type": "partial",
+      "rationale": "Cross-team dispute visibility with alerts. Stakeholder focus: a chargeback operations lead."
+    },
+    {
+      "id": "DSP03",
+      "text": "As a merchant success manager, I need to auto-escalate repeated merchant disputes during schemes' shortened response windows, so that finance provisions the right reserves.",
+      "expected": [
+        "Dispute_Management",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Email_Communication_Module",
+        "Loan_Module",
+        "Dispute_Management",
+        "Reporting_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.8711,
+          "source": "threshold"
+        },
+        {
+          "label": "Loan_Module",
+          "score": 0.1716,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.1001,
+          "source": "fallback"
+        },
+        {
+          "label": "Reporting_Service",
+          "score": 0.0659,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Dispute_Management"
+      ],
+      "false_positives": [
+        "Email_Communication_Module",
+        "Loan_Module",
+        "Reporting_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Notification_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Cross-team dispute visibility with alerts. Stakeholder focus: a merchant success manager."
+    },
+    {
+      "id": "DSP04",
+      "text": "As a field collections coach, I need SLA timers visible to every agent when dispute queues double after outages, so that finance provisions the right reserves.",
+      "expected": [
+        "Dispute_Management",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "SMS_Service",
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "Collections_Workflow",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "SMS_Service",
+          "score": 0.8084,
+          "source": "threshold"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.6602,
+          "source": "threshold"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0585,
+          "source": "fallback"
+        },
+        {
+          "label": "Collections_Workflow",
+          "score": 0.0187,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0151,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Collections_Workflow",
+        "Dispute_Management",
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard"
+      ],
+      "match_type": "partial",
+      "rationale": "Cross-team dispute visibility with alerts. Stakeholder focus: a field collections coach."
+    },
+    {
+      "id": "DSP05",
+      "text": "As a field collections coach, I need to auto-escalate repeated merchant disputes while handling multilingual attachments, so that merchant churn drops despite spikes.",
+      "expected": [
+        "Dispute_Management",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Email_Communication_Module",
+        "Dispute_Management",
+        "SMS_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.4614,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.2724,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.0808,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Dispute_Management"
+      ],
+      "false_positives": [
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Notification_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Cross-team dispute visibility with alerts. Stakeholder focus: a field collections coach."
+    },
+    {
+      "id": "DSP06",
+      "text": "As a dispute analyst, I need SLA timers visible to every agent when dispute queues double after outages, so that merchant churn drops despite spikes.",
+      "expected": [
+        "Dispute_Management",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Collections_Workflow",
+        "Agent_Dashboard",
+        "Email_Communication_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.8959,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.8512,
+          "source": "threshold"
+        },
+        {
+          "label": "Collections_Workflow",
+          "score": 0.0536,
+          "source": "fallback"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.0507,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0087,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Dispute_Management"
+      ],
+      "match_type": "partial",
+      "rationale": "Cross-team dispute visibility with alerts. Stakeholder focus: a dispute analyst."
+    },
+    {
+      "id": "DSP07",
+      "text": "As an ombudsman liaison, I need to link dispute IDs to repayment plans while handling multilingual attachments, so that ombudsman cases close before breaching SLAs.",
+      "expected": [
+        "Dispute_Management",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.499,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.3432,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.1953,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Dispute_Management",
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Email_Communication_Module"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Collections_Workflow"
+      ],
+      "match_type": "partial",
+      "rationale": "Cross-team dispute visibility with alerts. Stakeholder focus: an ombudsman liaison."
+    },
+    {
+      "id": "DSP08",
+      "text": "As an ombudsman liaison, I need to auto-escalate repeated merchant disputes during schemes' shortened response windows, so that agents see the full context without swivel-chairing.",
+      "expected": [
+        "Dispute_Management",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Email_Communication_Module",
+        "Dispute_Management",
+        "SMS_Service",
+        "Notification_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.8493,
+          "source": "threshold"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.3414,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1622,
+          "source": "fallback"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.014,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Dispute_Management",
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Collections_Workflow"
+      ],
+      "match_type": "partial",
+      "rationale": "Cross-team dispute visibility with alerts. Stakeholder focus: an ombudsman liaison."
+    },
+    {
+      "id": "DSP09",
+      "text": "As a dispute analyst, I need SLA timers visible to every agent when merchants upload bulk evidence late at night, so that finance provisions the right reserves.",
+      "expected": [
+        "Dispute_Management",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Email_Communication_Module",
+        "Dispute_Management",
+        "Document_Upload_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.827,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.6627,
+          "source": "threshold"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0228,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0169,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.01,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Dispute_Management",
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Document_Upload_Service",
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Collections_Workflow"
+      ],
+      "match_type": "partial",
+      "rationale": "Cross-team dispute visibility with alerts. Stakeholder focus: a dispute analyst."
+    },
+    {
+      "id": "DSP10",
+      "text": "As a field collections coach, I need to suppress payment reminders for accounts in dispute during regulator shadow audits, so that collections does not double-contact stressed customers.",
+      "expected": [
+        "Dispute_Management",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Agent_Dashboard"
+      ],
+      "predicted": [
+        "Email_Communication_Module",
+        "Customer_Portal_UI",
+        "Loan_Module",
+        "Transaction_History_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.9436,
+          "source": "threshold"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.1278,
+          "source": "fallback"
+        },
+        {
+          "label": "Loan_Module",
+          "score": 0.1097,
+          "source": "fallback"
+        },
+        {
+          "label": "Transaction_History_Service",
+          "score": 0.078,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "Loan_Module",
+        "Transaction_History_Service"
+      ],
+      "false_negatives": [
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Dispute_Management",
+        "Notification_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Cross-team dispute visibility with alerts. Stakeholder focus: a field collections coach."
+    },
+    {
+      "id": "CORE01",
+      "text": "As a treasury operations manager, I need sandbox parity with production connectors during hybrid-cloud cutovers, so that data science teams stop rebuilding pipelines.",
+      "expected": [
+        "Core_Banking_Integration",
+        "API_Gateway",
+        "Transaction_History_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "API_Gateway",
+        "Customer_Profile_Service",
+        "Data_Warehouse"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.5439,
+          "source": "threshold"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.2892,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.106,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0879,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "API_Gateway",
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Customer_Profile_Service",
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "Core_Banking_Integration",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Core integrations plus observability. Stakeholder focus: a treasury operations manager."
+    },
+    {
+      "id": "CORE02",
+      "text": "As a treasury operations manager, I need retries when downstream cores time out during hybrid-cloud cutovers, so that transfers do not fail silently.",
+      "expected": [
+        "Core_Banking_Integration",
+        "API_Gateway",
+        "Transaction_History_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Data_Warehouse",
+        "Notification_Engine",
+        "API_Gateway"
+      ],
+      "prediction_details": [
+        {
+          "label": "Data_Warehouse",
+          "score": 0.3049,
+          "source": "fallback"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.1022,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0451,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "API_Gateway",
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "Core_Banking_Integration",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Core integrations plus observability. Stakeholder focus: a treasury operations manager."
+    },
+    {
+      "id": "CORE03",
+      "text": "As a treasury operations manager, I need to replay missed transactions automatically when third parties rotate certificates unexpectedly, so that regulators see operational resilience plans.",
+      "expected": [
+        "Core_Banking_Integration",
+        "API_Gateway",
+        "Transaction_History_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Transaction_History_Service",
+        "Data_Warehouse",
+        "Customer_Portal_UI"
+      ],
+      "prediction_details": [
+        {
+          "label": "Transaction_History_Service",
+          "score": 0.3588,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.1069,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.068,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Data_Warehouse",
+        "Transaction_History_Service"
+      ],
+      "false_positives": [
+        "Customer_Portal_UI"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Core_Banking_Integration"
+      ],
+      "match_type": "partial",
+      "rationale": "Core integrations plus observability. Stakeholder focus: a treasury operations manager."
+    },
+    {
+      "id": "CORE04",
+      "text": "As a fintech BD lead, I need lineage on data flowing into reports while switching to ISO 20022 messages, so that partners trust the uptime targets.",
+      "expected": [
+        "Core_Banking_Integration",
+        "API_Gateway",
+        "Transaction_History_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "API_Gateway",
+        "Data_Warehouse",
+        "Customer_Profile_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.7168,
+          "source": "threshold"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0571,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0464,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.0386,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "API_Gateway",
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Customer_Profile_Service",
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "Core_Banking_Integration",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Core integrations plus observability. Stakeholder focus: a fintech BD lead."
+    },
+    {
+      "id": "CORE05",
+      "text": "As a payment rails architect, I need sandbox parity with production connectors during nightly settlement batches, so that partners trust the uptime targets.",
+      "expected": [
+        "Core_Banking_Integration",
+        "API_Gateway",
+        "Transaction_History_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "API_Gateway",
+        "Customer_Profile_Service",
+        "Data_Warehouse"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.727,
+          "source": "threshold"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.2849,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.0509,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0215,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "API_Gateway",
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Customer_Profile_Service",
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "Core_Banking_Integration",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Core integrations plus observability. Stakeholder focus: a payment rails architect."
+    },
+    {
+      "id": "CORE06",
+      "text": "As an integration engineer, I need retries when downstream cores time out during hybrid-cloud cutovers, so that partners trust the uptime targets.",
+      "expected": [
+        "Core_Banking_Integration",
+        "API_Gateway",
+        "Transaction_History_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Data_Warehouse",
+        "Notification_Engine",
+        "API_Gateway"
+      ],
+      "prediction_details": [
+        {
+          "label": "Data_Warehouse",
+          "score": 0.3582,
+          "source": "fallback"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.1378,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.1326,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "API_Gateway",
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "Core_Banking_Integration",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Core integrations plus observability. Stakeholder focus: an integration engineer."
+    },
+    {
+      "id": "CORE07",
+      "text": "As a managed services vendor, I need lineage on data flowing into reports during nightly settlement batches, so that audit trails stay intact across vendors.",
+      "expected": [
+        "Core_Banking_Integration",
+        "API_Gateway",
+        "Transaction_History_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Dispute_Management",
+        "Email_Communication_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.4789,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.2428,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0581,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Dispute_Management",
+        "Email_Communication_Module",
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Core_Banking_Integration",
+        "Data_Warehouse",
+        "Transaction_History_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Core integrations plus observability. Stakeholder focus: a managed services vendor."
+    },
+    {
+      "id": "CORE08",
+      "text": "As a treasury operations manager, I need schema drift alerts before deployments while switching to ISO 20022 messages, so that transfers do not fail silently.",
+      "expected": [
+        "Core_Banking_Integration",
+        "API_Gateway",
+        "Transaction_History_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Rule_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9948,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.879,
+          "source": "threshold"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.3746,
+          "source": "fallback"
+        },
+        {
+          "label": "Collections_Workflow",
+          "score": 0.0468,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0216,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Notification_Engine",
+        "Rule_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Core_Banking_Integration",
+        "Data_Warehouse",
+        "Transaction_History_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Core integrations plus observability. Stakeholder focus: a treasury operations manager."
+    },
+    {
+      "id": "CORE09",
+      "text": "As an integration engineer, I need retries when downstream cores time out while switching to ISO 20022 messages, so that transfers do not fail silently.",
+      "expected": [
+        "Core_Banking_Integration",
+        "API_Gateway",
+        "Transaction_History_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Data_Warehouse",
+        "API_Gateway"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.3453,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.08,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0757,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "API_Gateway",
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "Core_Banking_Integration",
+        "Transaction_History_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Core integrations plus observability. Stakeholder focus: an integration engineer."
+    },
+    {
+      "id": "CORE10",
+      "text": "As a managed services vendor, I need schema drift alerts before deployments while migrating legacy SOAP services, so that data science teams stop rebuilding pipelines.",
+      "expected": [
+        "Core_Banking_Integration",
+        "API_Gateway",
+        "Transaction_History_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Agent_Dashboard",
+        "Rule_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9915,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.4707,
+          "source": "fallback"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.1312,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0939,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Agent_Dashboard",
+        "Notification_Engine",
+        "Rule_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "API_Gateway",
+        "Core_Banking_Integration",
+        "Data_Warehouse",
+        "Transaction_History_Service"
+      ],
+      "match_type": "miss",
+      "rationale": "Core integrations plus observability. Stakeholder focus: a managed services vendor."
+    },
+    {
+      "id": "COMM01",
+      "text": "As a partner enablement coach, I need proactive outage banners inside the portal while half the audience is offline overnight, so that fraud desks can prove outreach history.",
+      "expected": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Data_Warehouse",
+        "Customer_Portal_UI"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.3548,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0308,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0208,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Customer_Portal_UI",
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "Data_Warehouse"
+      ],
+      "false_negatives": [
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Omni-channel comms with governance. Stakeholder focus: a partner enablement coach."
+    },
+    {
+      "id": "COMM02",
+      "text": "As a fraud communications specialist, I need WhatsApp opt-ins mirrored to SMS for LATAM during simultaneous product launches, so that customers trust every alert channel.",
+      "expected": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI"
+      ],
+      "predicted": [
+        "SMS_Service",
+        "Notification_Engine",
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "Authentication_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "SMS_Service",
+          "score": 0.8734,
+          "source": "threshold"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.5047,
+          "source": "threshold"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.2193,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.1145,
+          "source": "fallback"
+        },
+        {
+          "label": "Authentication_Service",
+          "score": 0.0842,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "Authentication_Service"
+      ],
+      "false_negatives": [],
+      "match_type": "partial",
+      "rationale": "Omni-channel comms with governance. Stakeholder focus: a fraud communications specialist."
+    },
+    {
+      "id": "COMM03",
+      "text": "As a marketing automation lead, I need WhatsApp opt-ins mirrored to SMS for LATAM while juggling strict brand guidelines, so that execs see readiness before PR hits.",
+      "expected": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI"
+      ],
+      "predicted": [
+        "SMS_Service",
+        "Notification_Engine",
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "Collections_Workflow"
+      ],
+      "prediction_details": [
+        {
+          "label": "SMS_Service",
+          "score": 0.7272,
+          "source": "threshold"
+        },
+        {
+          "label": "Notification_Engine",
+          "score": 0.6109,
+          "source": "threshold"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0633,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0342,
+          "source": "fallback"
+        },
+        {
+          "label": "Collections_Workflow",
+          "score": 0.0237,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "Collections_Workflow"
+      ],
+      "false_negatives": [],
+      "match_type": "partial",
+      "rationale": "Omni-channel comms with governance. Stakeholder focus: a marketing automation lead."
+    },
+    {
+      "id": "COMM04",
+      "text": "As a marketing automation lead, I need triggered education tips after risky events during simultaneous product launches, so that partners stop asking for manual updates.",
+      "expected": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Document_Upload_Service",
+        "SMS_Service",
+        "Dispute_Management"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9112,
+          "source": "threshold"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.0547,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.0402,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.0396,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "Dispute_Management",
+        "Document_Upload_Service"
+      ],
+      "false_negatives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module"
+      ],
+      "match_type": "partial",
+      "rationale": "Omni-channel comms with governance. Stakeholder focus: a marketing automation lead."
+    },
+    {
+      "id": "COMM05",
+      "text": "As a customer experience director, I need to coordinate multilingual feature rollouts while half the audience is offline overnight, so that execs see readiness before PR hits.",
+      "expected": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "API_Gateway",
+        "Customer_Profile_Service",
+        "Data_Warehouse"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.7414,
+          "source": "threshold"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.1468,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.0984,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0446,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "API_Gateway",
+        "Customer_Profile_Service",
+        "Data_Warehouse"
+      ],
+      "false_negatives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Omni-channel comms with governance. Stakeholder focus: a customer experience director."
+    },
+    {
+      "id": "COMM06",
+      "text": "As a marketing automation lead, I need to coordinate multilingual feature rollouts while juggling strict brand guidelines, so that fraud desks can prove outreach history.",
+      "expected": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Rule_Engine",
+        "API_Gateway",
+        "Agent_Dashboard"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.5492,
+          "source": "threshold"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0288,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0248,
+          "source": "fallback"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.0134,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "API_Gateway",
+        "Agent_Dashboard",
+        "Rule_Engine"
+      ],
+      "false_negatives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Omni-channel comms with governance. Stakeholder focus: a marketing automation lead."
+    },
+    {
+      "id": "COMM07",
+      "text": "As a partner enablement coach, I need to coordinate multilingual feature rollouts during simultaneous product launches, so that content teams focus on strategy not ops.",
+      "expected": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "API_Gateway",
+        "Customer_Profile_Service",
+        "Rule_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.7699,
+          "source": "threshold"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.3129,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.0777,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0777,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "API_Gateway",
+        "Customer_Profile_Service",
+        "Rule_Engine"
+      ],
+      "false_negatives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Omni-channel comms with governance. Stakeholder focus: a partner enablement coach."
+    },
+    {
+      "id": "COMM08",
+      "text": "As a partner enablement coach, I need to coordinate multilingual feature rollouts during crisis simulations, so that content teams focus on strategy not ops.",
+      "expected": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "API_Gateway",
+        "Data_Warehouse",
+        "Rule_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.5439,
+          "source": "threshold"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0624,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0545,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0448,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Notification_Engine"
+      ],
+      "false_positives": [
+        "API_Gateway",
+        "Data_Warehouse",
+        "Rule_Engine"
+      ],
+      "false_negatives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "SMS_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Omni-channel comms with governance. Stakeholder focus: a partner enablement coach."
+    },
+    {
+      "id": "COMM09",
+      "text": "As a partner enablement coach, I need WhatsApp opt-ins mirrored to SMS for LATAM during simultaneous product launches, so that partners stop asking for manual updates.",
+      "expected": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Customer_Portal_UI",
+        "API_Gateway",
+        "Email_Communication_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.7298,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.6659,
+          "source": "threshold"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0779,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.037,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0279,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "API_Gateway"
+      ],
+      "false_negatives": [],
+      "match_type": "partial",
+      "rationale": "Omni-channel comms with governance. Stakeholder focus: a partner enablement coach."
+    },
+    {
+      "id": "COMM10",
+      "text": "As a fraud communications specialist, I need WhatsApp opt-ins mirrored to SMS for LATAM during simultaneous product launches, so that content teams focus on strategy not ops.",
+      "expected": [
+        "Notification_Engine",
+        "Email_Communication_Module",
+        "SMS_Service",
+        "Customer_Portal_UI"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "API_Gateway"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.6435,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.5819,
+          "source": "threshold"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.074,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0258,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0237,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_positives": [
+        "API_Gateway"
+      ],
+      "false_negatives": [],
+      "match_type": "partial",
+      "rationale": "Omni-channel comms with governance. Stakeholder focus: a fraud communications specialist."
+    },
+    {
+      "id": "REG01",
+      "text": "As an AML investigator, I need nightly reviews of high-risk entities during regulator onsite exams, so that privacy teams trust suppression workflows.",
+      "expected": [
+        "Rule_Engine",
+        "Reporting_Service",
+        "KYC_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Data_Warehouse"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.3781,
+          "source": "fallback"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.067,
+          "source": "fallback"
+        },
+        {
+          "label": "Data_Warehouse",
+          "score": 0.0423,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Data_Warehouse"
+      ],
+      "false_positives": [
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "KYC_Service",
+        "Reporting_Service",
+        "Rule_Engine"
+      ],
+      "match_type": "partial",
+      "rationale": "Regulatory control room scenarios. Stakeholder focus: an AML investigator."
+    },
+    {
+      "id": "REG02",
+      "text": "As an AML investigator, I need to push escalations straight to regulators while migrating to new policy thresholds, so that regulators see proactive posture.",
+      "expected": [
+        "Rule_Engine",
+        "Reporting_Service",
+        "KYC_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Customer_Profile_Service",
+        "Document_Upload_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.8028,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.3725,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.036,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.0207,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Customer_Profile_Service",
+        "Document_Upload_Service",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Data_Warehouse",
+        "KYC_Service",
+        "Reporting_Service",
+        "Rule_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Regulatory control room scenarios. Stakeholder focus: an AML investigator."
+    },
+    {
+      "id": "REG03",
+      "text": "As a chief compliance officer, I need to flag onboarding trends by jurisdiction during privacy data-retention purges, so that regulators see proactive posture.",
+      "expected": [
+        "Rule_Engine",
+        "Reporting_Service",
+        "KYC_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Authentication_Service",
+        "Rule_Engine",
+        "Customer_Portal_UI"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9461,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.7417,
+          "source": "threshold"
+        },
+        {
+          "label": "Authentication_Service",
+          "score": 0.0236,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0176,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0148,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Rule_Engine"
+      ],
+      "false_positives": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Data_Warehouse",
+        "KYC_Service",
+        "Reporting_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Regulatory control room scenarios. Stakeholder focus: a chief compliance officer."
+    },
+    {
+      "id": "REG04",
+      "text": "As a chief compliance officer, I need to auto-close alerts with duplicate docs while running model validations, so that investigators stop drowning in false positives.",
+      "expected": [
+        "Rule_Engine",
+        "Reporting_Service",
+        "KYC_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Document_Upload_Service",
+        "Rule_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9931,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.9236,
+          "source": "threshold"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.571,
+          "source": "threshold"
+        },
+        {
+          "label": "Collections_Workflow",
+          "score": 0.0724,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.0191,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0124,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Rule_Engine"
+      ],
+      "false_positives": [
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Document_Upload_Service",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Data_Warehouse",
+        "KYC_Service",
+        "Reporting_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Regulatory control room scenarios. Stakeholder focus: a chief compliance officer."
+    },
+    {
+      "id": "REG05",
+      "text": "As a chief compliance officer, I need to flag onboarding trends by jurisdiction while running model validations, so that legal holds are traceable in reports.",
+      "expected": [
+        "Rule_Engine",
+        "Reporting_Service",
+        "KYC_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "API_Gateway",
+        "Rule_Engine"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9792,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.3898,
+          "source": "fallback"
+        },
+        {
+          "label": "API_Gateway",
+          "score": 0.0334,
+          "source": "fallback"
+        },
+        {
+          "label": "Rule_Engine",
+          "score": 0.0213,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [
+        "Rule_Engine"
+      ],
+      "false_positives": [
+        "API_Gateway",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Data_Warehouse",
+        "KYC_Service",
+        "Reporting_Service"
+      ],
+      "match_type": "partial",
+      "rationale": "Regulatory control room scenarios. Stakeholder focus: a chief compliance officer."
+    },
+    {
+      "id": "REG06",
+      "text": "As a risk technology manager, I need nightly reviews of high-risk entities during privacy data-retention purges, so that legal holds are traceable in reports.",
+      "expected": [
+        "Rule_Engine",
+        "Reporting_Service",
+        "KYC_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "Customer_Portal_UI",
+        "Email_Communication_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.1662,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0693,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.0581,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "Notification_Engine"
+      ],
+      "false_negatives": [
+        "Data_Warehouse",
+        "KYC_Service",
+        "Reporting_Service",
+        "Rule_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Regulatory control room scenarios. Stakeholder focus: a risk technology manager."
+    },
+    {
+      "id": "REG07",
+      "text": "As a chief compliance officer, I need to auto-close alerts with duplicate docs while running model validations, so that legal holds are traceable in reports.",
+      "expected": [
+        "Rule_Engine",
+        "Reporting_Service",
+        "KYC_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Document_Upload_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9935,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.9019,
+          "source": "threshold"
+        },
+        {
+          "label": "Agent_Dashboard",
+          "score": 0.484,
+          "source": "fallback"
+        },
+        {
+          "label": "Collections_Workflow",
+          "score": 0.0618,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.0191,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Agent_Dashboard",
+        "Collections_Workflow",
+        "Document_Upload_Service",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Data_Warehouse",
+        "KYC_Service",
+        "Reporting_Service",
+        "Rule_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Regulatory control room scenarios. Stakeholder focus: a chief compliance officer."
+    },
+    {
+      "id": "REG08",
+      "text": "As a risk technology manager, I need to evidence every adverse-media rule hit during privacy data-retention purges, so that board packs cite the same metrics every month.",
+      "expected": [
+        "Rule_Engine",
+        "Reporting_Service",
+        "KYC_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Email_Communication_Module",
+        "Dispute_Management",
+        "Document_Upload_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.8744,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.5171,
+          "source": "threshold"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.1497,
+          "source": "fallback"
+        },
+        {
+          "label": "Dispute_Management",
+          "score": 0.12,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.043,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Dispute_Management",
+        "Document_Upload_Service",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Data_Warehouse",
+        "KYC_Service",
+        "Reporting_Service",
+        "Rule_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Regulatory control room scenarios. Stakeholder focus: a risk technology manager."
+    },
+    {
+      "id": "REG09",
+      "text": "As a risk technology manager, I need to push escalations straight to regulators while migrating to new policy thresholds, so that regulators see proactive posture.",
+      "expected": [
+        "Rule_Engine",
+        "Reporting_Service",
+        "KYC_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Customer_Profile_Service",
+        "Document_Upload_Service"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.6547,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.1994,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Profile_Service",
+          "score": 0.0344,
+          "source": "fallback"
+        },
+        {
+          "label": "Document_Upload_Service",
+          "score": 0.0121,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Customer_Profile_Service",
+        "Document_Upload_Service",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Data_Warehouse",
+        "KYC_Service",
+        "Reporting_Service",
+        "Rule_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Regulatory control room scenarios. Stakeholder focus: a risk technology manager."
+    },
+    {
+      "id": "REG10",
+      "text": "As an AML investigator, I need to flag onboarding trends by jurisdiction during privacy data-retention purges, so that legal holds are traceable in reports.",
+      "expected": [
+        "Rule_Engine",
+        "Reporting_Service",
+        "KYC_Service",
+        "Data_Warehouse"
+      ],
+      "predicted": [
+        "Notification_Engine",
+        "SMS_Service",
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Email_Communication_Module"
+      ],
+      "prediction_details": [
+        {
+          "label": "Notification_Engine",
+          "score": 0.9478,
+          "source": "threshold"
+        },
+        {
+          "label": "SMS_Service",
+          "score": 0.6687,
+          "source": "threshold"
+        },
+        {
+          "label": "Authentication_Service",
+          "score": 0.029,
+          "source": "fallback"
+        },
+        {
+          "label": "Customer_Portal_UI",
+          "score": 0.0205,
+          "source": "fallback"
+        },
+        {
+          "label": "Email_Communication_Module",
+          "score": 0.019,
+          "source": "fallback"
+        }
+      ],
+      "true_positives": [],
+      "false_positives": [
+        "Authentication_Service",
+        "Customer_Portal_UI",
+        "Email_Communication_Module",
+        "Notification_Engine",
+        "SMS_Service"
+      ],
+      "false_negatives": [
+        "Data_Warehouse",
+        "KYC_Service",
+        "Reporting_Service",
+        "Rule_Engine"
+      ],
+      "match_type": "miss",
+      "rationale": "Regulatory control room scenarios. Stakeholder focus: an AML investigator."
+    }
+  ]
+}

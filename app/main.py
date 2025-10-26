@@ -1,8 +1,10 @@
 from pathlib import Path
+import os
 import sys
 from typing import List
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -34,6 +36,16 @@ app = FastAPI(
     summary="Predict impacted components from requirement statements.",
 )
 
+# CORS for React UI
+ALLOW_ORIGINS = os.getenv("ALLOW_ORIGINS", "*").split(",") if os.getenv("ALLOW_ORIGINS") else ["*"]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=ALLOW_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 MODEL_DIR = PROJECT_ROOT / "models" / "distilbert_component_classifier"
 MODEL = None
 TOKENIZER = None
@@ -43,11 +55,21 @@ LABELS = None
 @app.on_event("startup")
 async def _load_model() -> None:
     global MODEL, TOKENIZER, LABELS  # pylint: disable=global-statement
-    if not MODEL_DIR.exists():
-        raise RuntimeError(
-            f"Model directory '{MODEL_DIR}' not found. Train the model before starting the API."
-        )
-    MODEL, TOKENIZER, LABELS = load_assets(str(MODEL_DIR))
+    if MODEL_DIR.exists():
+        MODEL, TOKENIZER, LABELS = load_assets(str(MODEL_DIR))
+    else:
+        # Defer loading; endpoint guard will respond 503 until trained
+        MODEL, TOKENIZER, LABELS = None, None, None
+
+
+@app.get("/healthz")
+async def healthz() -> dict:
+    return {"status": "ok", "version": app.version}
+
+
+@app.get("/readyz")
+async def readyz() -> dict:
+    return {"ready": MODEL is not None}
 
 
 @app.post("/predict", response_model=PredictResponse)
@@ -67,3 +89,13 @@ async def predict_components(payload: PredictRequest) -> PredictResponse:
     predictions.sort(key=lambda item: item["score"], reverse=True)
     scores = [ComponentScore(**item) for item in predictions]
     return PredictResponse(components=scores, threshold=payload.threshold)
+
+
+# Optional Prometheus metrics if installed and enabled
+if os.getenv("ENABLE_METRICS", "0") == "1":
+    try:
+        from prometheus_fastapi_instrumentator import Instrumentator  # type: ignore
+
+        Instrumentator().instrument(app).expose(app)
+    except Exception:  # pragma: no cover - optional dependency
+        pass

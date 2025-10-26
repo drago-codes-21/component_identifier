@@ -1,0 +1,211 @@
+# Manual Scenario Evaluation
+
+- Source cases: `reports\manual_eval_cases_100.jsonl`
+- Total scenarios reviewed: 100
+- Threshold: 0.5 | Top-k fallback: 0.
+- Precision 33.8% (44 correct vs 86 incorrect component calls).
+- Recall 11.0% (found 44 of 400 expected components).
+- Exact matches: 0/100.
+- Most frequently missed components: Rule_Engine (40), Transaction_History_Service (28), Data_Warehouse (26), Notification_Engine (23), Customer_Portal_UI (20).
+
+## Scenario Breakdown
+- AUTH01 [PARTIAL] expected Authentication_Service, Customer_Portal_UI, Notification_Engine, SMS_Service; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Authentication_Service, Customer_Portal_UI, SMS_Service.
+  - Why it matters: Stress login resilience plus outbound confirmations. Stakeholder focus: a fintech reseller.
+- AUTH02 [PARTIAL] expected Authentication_Service, Customer_Portal_UI, Notification_Engine, SMS_Service; model predicted Notification_Engine, SMS_Service. Hits: Notification_Engine, SMS_Service. Extra: none. Missed: Authentication_Service, Customer_Portal_UI.
+  - Why it matters: Stress login resilience plus outbound confirmations. Stakeholder focus: a regional operations lead.
+- AUTH03 [PARTIAL] expected Authentication_Service, Customer_Portal_UI, Notification_Engine, SMS_Service; model predicted SMS_Service. Hits: SMS_Service. Extra: none. Missed: Authentication_Service, Customer_Portal_UI, Notification_Engine.
+  - Why it matters: Stress login resilience plus outbound confirmations. Stakeholder focus: a regional operations lead.
+- AUTH04 [PARTIAL] expected Authentication_Service, Customer_Portal_UI, Notification_Engine, SMS_Service; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Authentication_Service, Customer_Portal_UI, SMS_Service.
+  - Why it matters: Stress login resilience plus outbound confirmations. Stakeholder focus: a regional operations lead.
+- AUTH05 [PARTIAL] expected Authentication_Service, Customer_Portal_UI, Notification_Engine, SMS_Service; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Authentication_Service, Customer_Portal_UI, SMS_Service.
+  - Why it matters: Stress login resilience plus outbound confirmations. Stakeholder focus: a fintech reseller.
+- AUTH06 [PARTIAL] expected Authentication_Service, Customer_Portal_UI, Notification_Engine, SMS_Service; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Authentication_Service, Customer_Portal_UI, SMS_Service.
+  - Why it matters: Stress login resilience plus outbound confirmations. Stakeholder focus: a field collections officer.
+- AUTH07 [PARTIAL] expected Authentication_Service, Customer_Portal_UI, Notification_Engine, SMS_Service; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Authentication_Service, Customer_Portal_UI, SMS_Service.
+  - Why it matters: Stress login resilience plus outbound confirmations. Stakeholder focus: a treasury admin.
+- AUTH08 [PARTIAL] expected Authentication_Service, Customer_Portal_UI, Notification_Engine, SMS_Service; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Authentication_Service, Customer_Portal_UI, SMS_Service.
+  - Why it matters: Stress login resilience plus outbound confirmations. Stakeholder focus: a regional operations lead.
+- AUTH09 [PARTIAL] expected Authentication_Service, Customer_Portal_UI, Notification_Engine, SMS_Service; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Authentication_Service, Customer_Portal_UI, SMS_Service.
+  - Why it matters: Stress login resilience plus outbound confirmations. Stakeholder focus: a regional operations lead.
+- AUTH10 [PARTIAL] expected Authentication_Service, Customer_Portal_UI, Notification_Engine, SMS_Service; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Authentication_Service, Customer_Portal_UI, SMS_Service.
+  - Why it matters: Stress login resilience plus outbound confirmations. Stakeholder focus: a field collections officer.
+- LOAN01 [MISS] expected Loan_Module, Credit_Score_Engine, Rule_Engine, Notification_Engine; model predicted Data_Warehouse. Hits: none. Extra: Data_Warehouse. Missed: Credit_Score_Engine, Loan_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a virtual loan advisor.
+- LOAN02 [PARTIAL] expected Loan_Module, Credit_Score_Engine, Rule_Engine, Notification_Engine; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Credit_Score_Engine, Loan_Module, Rule_Engine.
+  - Why it matters: Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a branch lending manager.
+- LOAN03 [MISS] expected Loan_Module, Credit_Score_Engine, Rule_Engine, Notification_Engine; model predicted Data_Warehouse. Hits: none. Extra: Data_Warehouse. Missed: Credit_Score_Engine, Loan_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a small-business risk analyst.
+- LOAN04 [MISS] expected Loan_Module, Credit_Score_Engine, Rule_Engine, Notification_Engine; model predicted Data_Warehouse. Hits: none. Extra: Data_Warehouse. Missed: Credit_Score_Engine, Loan_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a partner bank underwriter.
+- LOAN05 [MISS] expected Loan_Module, Credit_Score_Engine, Rule_Engine, Notification_Engine; model predicted SMS_Service. Hits: none. Extra: SMS_Service. Missed: Credit_Score_Engine, Loan_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a virtual loan advisor.
+- LOAN06 [MISS] expected Loan_Module, Credit_Score_Engine, Rule_Engine, Notification_Engine; model predicted Data_Warehouse. Hits: none. Extra: Data_Warehouse. Missed: Credit_Score_Engine, Loan_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a partner bank underwriter.
+- LOAN07 [PARTIAL] expected Loan_Module, Credit_Score_Engine, Rule_Engine, Notification_Engine; model predicted Loan_Module. Hits: Loan_Module. Extra: none. Missed: Credit_Score_Engine, Notification_Engine, Rule_Engine.
+  - Why it matters: Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a partner bank underwriter.
+- LOAN08 [MISS] expected Loan_Module, Credit_Score_Engine, Rule_Engine, Notification_Engine; model predicted Data_Warehouse. Hits: none. Extra: Data_Warehouse. Missed: Credit_Score_Engine, Loan_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a servicing specialist.
+- LOAN09 [MISS] expected Loan_Module, Credit_Score_Engine, Rule_Engine, Notification_Engine; model predicted Data_Warehouse. Hits: none. Extra: Data_Warehouse. Missed: Credit_Score_Engine, Loan_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a small-business risk analyst.
+- LOAN10 [MISS] expected Loan_Module, Credit_Score_Engine, Rule_Engine, Notification_Engine; model predicted Email_Communication_Module. Hits: none. Extra: Email_Communication_Module. Missed: Credit_Score_Engine, Loan_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Loan offers mixing scores, rules, and proactive alerts. Stakeholder focus: a branch lending manager.
+- COLL01 [PARTIAL] expected Collections_Workflow, Rule_Engine, Notification_Engine, Email_Communication_Module; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Collections_Workflow, Email_Communication_Module, Rule_Engine.
+  - Why it matters: Collections triage with policy-aware outreach. Stakeholder focus: a recoveries director.
+- COLL02 [PARTIAL] expected Collections_Workflow, Rule_Engine, Notification_Engine, Email_Communication_Module; model predicted Dispute_Management, Email_Communication_Module, SMS_Service, Notification_Engine. Hits: Email_Communication_Module, Notification_Engine. Extra: Dispute_Management, SMS_Service. Missed: Collections_Workflow, Rule_Engine.
+  - Why it matters: Collections triage with policy-aware outreach. Stakeholder focus: a customer success lead.
+- COLL03 [MISS] expected Collections_Workflow, Rule_Engine, Notification_Engine, Email_Communication_Module; model predicted Agent_Dashboard. Hits: none. Extra: Agent_Dashboard. Missed: Collections_Workflow, Email_Communication_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Collections triage with policy-aware outreach. Stakeholder focus: a recoveries director.
+- COLL04 [MISS] expected Collections_Workflow, Rule_Engine, Notification_Engine, Email_Communication_Module; model predicted Loan_Module. Hits: none. Extra: Loan_Module. Missed: Collections_Workflow, Email_Communication_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Collections triage with policy-aware outreach. Stakeholder focus: a customer success lead.
+- COLL05 [PARTIAL] expected Collections_Workflow, Rule_Engine, Notification_Engine, Email_Communication_Module; model predicted Email_Communication_Module, SMS_Service. Hits: Email_Communication_Module. Extra: SMS_Service. Missed: Collections_Workflow, Notification_Engine, Rule_Engine.
+  - Why it matters: Collections triage with policy-aware outreach. Stakeholder focus: an early-stage collections agent.
+- COLL06 [PARTIAL] expected Collections_Workflow, Rule_Engine, Notification_Engine, Email_Communication_Module; model predicted SMS_Service, Email_Communication_Module. Hits: Email_Communication_Module. Extra: SMS_Service. Missed: Collections_Workflow, Notification_Engine, Rule_Engine.
+  - Why it matters: Collections triage with policy-aware outreach. Stakeholder focus: an early-stage collections agent.
+- COLL07 [MISS] expected Collections_Workflow, Rule_Engine, Notification_Engine, Email_Communication_Module; model predicted Loan_Module. Hits: none. Extra: Loan_Module. Missed: Collections_Workflow, Email_Communication_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Collections triage with policy-aware outreach. Stakeholder focus: a recoveries director.
+- COLL08 [MISS] expected Collections_Workflow, Rule_Engine, Notification_Engine, Email_Communication_Module; model predicted Loan_Module. Hits: none. Extra: Loan_Module. Missed: Collections_Workflow, Email_Communication_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Collections triage with policy-aware outreach. Stakeholder focus: a customer success lead.
+- COLL09 [PARTIAL] expected Collections_Workflow, Rule_Engine, Notification_Engine, Email_Communication_Module; model predicted Email_Communication_Module, SMS_Service. Hits: Email_Communication_Module. Extra: SMS_Service. Missed: Collections_Workflow, Notification_Engine, Rule_Engine.
+  - Why it matters: Collections triage with policy-aware outreach. Stakeholder focus: a legal collections partner.
+- COLL10 [MISS] expected Collections_Workflow, Rule_Engine, Notification_Engine, Email_Communication_Module; model predicted Data_Warehouse. Hits: none. Extra: Data_Warehouse. Missed: Collections_Workflow, Email_Communication_Module, Notification_Engine, Rule_Engine.
+  - Why it matters: Collections triage with policy-aware outreach. Stakeholder focus: a legal collections partner.
+- KYC01 [MISS] expected KYC_Service, Document_Upload_Service, Customer_Profile_Service, Agent_Dashboard; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Agent_Dashboard, Customer_Profile_Service, Document_Upload_Service, KYC_Service.
+  - Why it matters: Onboarding workflows with human-in-loop visibility. Stakeholder focus: a franchise compliance officer.
+- KYC02 [MISS] expected KYC_Service, Document_Upload_Service, Customer_Profile_Service, Agent_Dashboard; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Agent_Dashboard, Customer_Profile_Service, Document_Upload_Service, KYC_Service.
+  - Why it matters: Onboarding workflows with human-in-loop visibility. Stakeholder focus: a cross-border payments analyst.
+- KYC03 [MISS] expected KYC_Service, Document_Upload_Service, Customer_Profile_Service, Agent_Dashboard; model predicted Customer_Portal_UI. Hits: none. Extra: Customer_Portal_UI. Missed: Agent_Dashboard, Customer_Profile_Service, Document_Upload_Service, KYC_Service.
+  - Why it matters: Onboarding workflows with human-in-loop visibility. Stakeholder focus: a refugee onboarding NGO partner.
+- KYC04 [MISS] expected KYC_Service, Document_Upload_Service, Customer_Profile_Service, Agent_Dashboard; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Agent_Dashboard, Customer_Profile_Service, Document_Upload_Service, KYC_Service.
+  - Why it matters: Onboarding workflows with human-in-loop visibility. Stakeholder focus: a cross-border payments analyst.
+- KYC05 [MISS] expected KYC_Service, Document_Upload_Service, Customer_Profile_Service, Agent_Dashboard; model predicted SMS_Service, Notification_Engine. Hits: none. Extra: Notification_Engine, SMS_Service. Missed: Agent_Dashboard, Customer_Profile_Service, Document_Upload_Service, KYC_Service.
+  - Why it matters: Onboarding workflows with human-in-loop visibility. Stakeholder focus: a franchise compliance officer.
+- KYC06 [MISS] expected KYC_Service, Document_Upload_Service, Customer_Profile_Service, Agent_Dashboard; model predicted SMS_Service, Notification_Engine. Hits: none. Extra: Notification_Engine, SMS_Service. Missed: Agent_Dashboard, Customer_Profile_Service, Document_Upload_Service, KYC_Service.
+  - Why it matters: Onboarding workflows with human-in-loop visibility. Stakeholder focus: a refugee onboarding NGO partner.
+- KYC07 [MISS] expected KYC_Service, Document_Upload_Service, Customer_Profile_Service, Agent_Dashboard; model predicted Customer_Portal_UI. Hits: none. Extra: Customer_Portal_UI. Missed: Agent_Dashboard, Customer_Profile_Service, Document_Upload_Service, KYC_Service.
+  - Why it matters: Onboarding workflows with human-in-loop visibility. Stakeholder focus: a branch KYC supervisor.
+- KYC08 [MISS] expected KYC_Service, Document_Upload_Service, Customer_Profile_Service, Agent_Dashboard; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Agent_Dashboard, Customer_Profile_Service, Document_Upload_Service, KYC_Service.
+  - Why it matters: Onboarding workflows with human-in-loop visibility. Stakeholder focus: a franchise compliance officer.
+- KYC09 [MISS] expected KYC_Service, Document_Upload_Service, Customer_Profile_Service, Agent_Dashboard; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Agent_Dashboard, Customer_Profile_Service, Document_Upload_Service, KYC_Service.
+  - Why it matters: Onboarding workflows with human-in-loop visibility. Stakeholder focus: a wealth onboarding concierge.
+- KYC10 [MISS] expected KYC_Service, Document_Upload_Service, Customer_Profile_Service, Agent_Dashboard; model predicted Notification_Engine, SMS_Service. Hits: none. Extra: Notification_Engine, SMS_Service. Missed: Agent_Dashboard, Customer_Profile_Service, Document_Upload_Service, KYC_Service.
+  - Why it matters: Onboarding workflows with human-in-loop visibility. Stakeholder focus: a refugee onboarding NGO partner.
+- PAY01 [MISS] expected Payment_Gateway, API_Gateway, Rule_Engine, Transaction_History_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Payment_Gateway, Rule_Engine, Transaction_History_Service.
+  - Why it matters: Payments resiliency with gateway + history signals. Stakeholder focus: a treasury settlement analyst.
+- PAY02 [MISS] expected Payment_Gateway, API_Gateway, Rule_Engine, Transaction_History_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Payment_Gateway, Rule_Engine, Transaction_History_Service.
+  - Why it matters: Payments resiliency with gateway + history signals. Stakeholder focus: an e-commerce architect.
+- PAY03 [MISS] expected Payment_Gateway, API_Gateway, Rule_Engine, Transaction_History_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Payment_Gateway, Rule_Engine, Transaction_History_Service.
+  - Why it matters: Payments resiliency with gateway + history signals. Stakeholder focus: a marketplace CFO.
+- PAY04 [MISS] expected Payment_Gateway, API_Gateway, Rule_Engine, Transaction_History_Service; model predicted Email_Communication_Module. Hits: none. Extra: Email_Communication_Module. Missed: API_Gateway, Payment_Gateway, Rule_Engine, Transaction_History_Service.
+  - Why it matters: Payments resiliency with gateway + history signals. Stakeholder focus: a mobility product manager.
+- PAY05 [MISS] expected Payment_Gateway, API_Gateway, Rule_Engine, Transaction_History_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Payment_Gateway, Rule_Engine, Transaction_History_Service.
+  - Why it matters: Payments resiliency with gateway + history signals. Stakeholder focus: a gaming studio ops lead.
+- PAY06 [MISS] expected Payment_Gateway, API_Gateway, Rule_Engine, Transaction_History_Service; model predicted Loan_Module. Hits: none. Extra: Loan_Module. Missed: API_Gateway, Payment_Gateway, Rule_Engine, Transaction_History_Service.
+  - Why it matters: Payments resiliency with gateway + history signals. Stakeholder focus: a gaming studio ops lead.
+- PAY07 [MISS] expected Payment_Gateway, API_Gateway, Rule_Engine, Transaction_History_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Payment_Gateway, Rule_Engine, Transaction_History_Service.
+  - Why it matters: Payments resiliency with gateway + history signals. Stakeholder focus: a marketplace CFO.
+- PAY08 [MISS] expected Payment_Gateway, API_Gateway, Rule_Engine, Transaction_History_Service; model predicted Notification_Engine, SMS_Service. Hits: none. Extra: Notification_Engine, SMS_Service. Missed: API_Gateway, Payment_Gateway, Rule_Engine, Transaction_History_Service.
+  - Why it matters: Payments resiliency with gateway + history signals. Stakeholder focus: a gaming studio ops lead.
+- PAY09 [PARTIAL] expected Payment_Gateway, API_Gateway, Rule_Engine, Transaction_History_Service; model predicted Transaction_History_Service. Hits: Transaction_History_Service. Extra: none. Missed: API_Gateway, Payment_Gateway, Rule_Engine.
+  - Why it matters: Payments resiliency with gateway + history signals. Stakeholder focus: an e-commerce architect.
+- PAY10 [MISS] expected Payment_Gateway, API_Gateway, Rule_Engine, Transaction_History_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Payment_Gateway, Rule_Engine, Transaction_History_Service.
+  - Why it matters: Payments resiliency with gateway + history signals. Stakeholder focus: an e-commerce architect.
+- RPT01 [MISS] expected Reporting_Service, Data_Warehouse, Transaction_History_Service, Customer_Profile_Service; model predicted Rule_Engine, Collections_Workflow, Agent_Dashboard. Hits: none. Extra: Agent_Dashboard, Collections_Workflow, Rule_Engine. Missed: Customer_Profile_Service, Data_Warehouse, Reporting_Service, Transaction_History_Service.
+  - Why it matters: Story telling dashboards across finance datasets. Stakeholder focus: a sustainability program manager.
+- RPT02 [MISS] expected Reporting_Service, Data_Warehouse, Transaction_History_Service, Customer_Profile_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Customer_Profile_Service, Data_Warehouse, Reporting_Service, Transaction_History_Service.
+  - Why it matters: Story telling dashboards across finance datasets. Stakeholder focus: a regulatory reporting lead.
+- RPT03 [PARTIAL] expected Reporting_Service, Data_Warehouse, Transaction_History_Service, Customer_Profile_Service; model predicted Data_Warehouse. Hits: Data_Warehouse. Extra: none. Missed: Customer_Profile_Service, Reporting_Service, Transaction_History_Service.
+  - Why it matters: Story telling dashboards across finance datasets. Stakeholder focus: a finance controller.
+- RPT04 [MISS] expected Reporting_Service, Data_Warehouse, Transaction_History_Service, Customer_Profile_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Customer_Profile_Service, Data_Warehouse, Reporting_Service, Transaction_History_Service.
+  - Why it matters: Story telling dashboards across finance datasets. Stakeholder focus: a regulatory reporting lead.
+- RPT05 [MISS] expected Reporting_Service, Data_Warehouse, Transaction_History_Service, Customer_Profile_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Customer_Profile_Service, Data_Warehouse, Reporting_Service, Transaction_History_Service.
+  - Why it matters: Story telling dashboards across finance datasets. Stakeholder focus: a sustainability program manager.
+- RPT06 [MISS] expected Reporting_Service, Data_Warehouse, Transaction_History_Service, Customer_Profile_Service; model predicted Rule_Engine, Collections_Workflow, Agent_Dashboard. Hits: none. Extra: Agent_Dashboard, Collections_Workflow, Rule_Engine. Missed: Customer_Profile_Service, Data_Warehouse, Reporting_Service, Transaction_History_Service.
+  - Why it matters: Story telling dashboards across finance datasets. Stakeholder focus: a finance controller.
+- RPT07 [PARTIAL] expected Reporting_Service, Data_Warehouse, Transaction_History_Service, Customer_Profile_Service; model predicted Data_Warehouse. Hits: Data_Warehouse. Extra: none. Missed: Customer_Profile_Service, Reporting_Service, Transaction_History_Service.
+  - Why it matters: Story telling dashboards across finance datasets. Stakeholder focus: a regulatory reporting lead.
+- RPT08 [MISS] expected Reporting_Service, Data_Warehouse, Transaction_History_Service, Customer_Profile_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Customer_Profile_Service, Data_Warehouse, Reporting_Service, Transaction_History_Service.
+  - Why it matters: Story telling dashboards across finance datasets. Stakeholder focus: a finance controller.
+- RPT09 [MISS] expected Reporting_Service, Data_Warehouse, Transaction_History_Service, Customer_Profile_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Customer_Profile_Service, Data_Warehouse, Reporting_Service, Transaction_History_Service.
+  - Why it matters: Story telling dashboards across finance datasets. Stakeholder focus: a sustainability program manager.
+- RPT10 [MISS] expected Reporting_Service, Data_Warehouse, Transaction_History_Service, Customer_Profile_Service; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Customer_Profile_Service, Data_Warehouse, Reporting_Service, Transaction_History_Service.
+  - Why it matters: Story telling dashboards across finance datasets. Stakeholder focus: a regulatory reporting lead.
+- DSP01 [MISS] expected Dispute_Management, Collections_Workflow, Notification_Engine, Agent_Dashboard; model predicted Email_Communication_Module. Hits: none. Extra: Email_Communication_Module. Missed: Agent_Dashboard, Collections_Workflow, Dispute_Management, Notification_Engine.
+  - Why it matters: Cross-team dispute visibility with alerts. Stakeholder focus: a dispute analyst.
+- DSP02 [PARTIAL] expected Dispute_Management, Collections_Workflow, Notification_Engine, Agent_Dashboard; model predicted Notification_Engine, SMS_Service. Hits: Notification_Engine. Extra: SMS_Service. Missed: Agent_Dashboard, Collections_Workflow, Dispute_Management.
+  - Why it matters: Cross-team dispute visibility with alerts. Stakeholder focus: a chargeback operations lead.
+- DSP03 [MISS] expected Dispute_Management, Collections_Workflow, Notification_Engine, Agent_Dashboard; model predicted Email_Communication_Module. Hits: none. Extra: Email_Communication_Module. Missed: Agent_Dashboard, Collections_Workflow, Dispute_Management, Notification_Engine.
+  - Why it matters: Cross-team dispute visibility with alerts. Stakeholder focus: a merchant success manager.
+- DSP04 [PARTIAL] expected Dispute_Management, Collections_Workflow, Notification_Engine, Agent_Dashboard; model predicted SMS_Service, Notification_Engine. Hits: Notification_Engine. Extra: SMS_Service. Missed: Agent_Dashboard, Collections_Workflow, Dispute_Management.
+  - Why it matters: Cross-team dispute visibility with alerts. Stakeholder focus: a field collections coach.
+- DSP05 [MISS] expected Dispute_Management, Collections_Workflow, Notification_Engine, Agent_Dashboard; model predicted Email_Communication_Module. Hits: none. Extra: Email_Communication_Module. Missed: Agent_Dashboard, Collections_Workflow, Dispute_Management, Notification_Engine.
+  - Why it matters: Cross-team dispute visibility with alerts. Stakeholder focus: a field collections coach.
+- DSP06 [PARTIAL] expected Dispute_Management, Collections_Workflow, Notification_Engine, Agent_Dashboard; model predicted Notification_Engine, SMS_Service. Hits: Notification_Engine. Extra: SMS_Service. Missed: Agent_Dashboard, Collections_Workflow, Dispute_Management.
+  - Why it matters: Cross-team dispute visibility with alerts. Stakeholder focus: a dispute analyst.
+- DSP07 [PARTIAL] expected Dispute_Management, Collections_Workflow, Notification_Engine, Agent_Dashboard; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Agent_Dashboard, Collections_Workflow, Dispute_Management.
+  - Why it matters: Cross-team dispute visibility with alerts. Stakeholder focus: an ombudsman liaison.
+- DSP08 [MISS] expected Dispute_Management, Collections_Workflow, Notification_Engine, Agent_Dashboard; model predicted Email_Communication_Module. Hits: none. Extra: Email_Communication_Module. Missed: Agent_Dashboard, Collections_Workflow, Dispute_Management, Notification_Engine.
+  - Why it matters: Cross-team dispute visibility with alerts. Stakeholder focus: an ombudsman liaison.
+- DSP09 [PARTIAL] expected Dispute_Management, Collections_Workflow, Notification_Engine, Agent_Dashboard; model predicted Notification_Engine, SMS_Service. Hits: Notification_Engine. Extra: SMS_Service. Missed: Agent_Dashboard, Collections_Workflow, Dispute_Management.
+  - Why it matters: Cross-team dispute visibility with alerts. Stakeholder focus: a dispute analyst.
+- DSP10 [MISS] expected Dispute_Management, Collections_Workflow, Notification_Engine, Agent_Dashboard; model predicted Email_Communication_Module. Hits: none. Extra: Email_Communication_Module. Missed: Agent_Dashboard, Collections_Workflow, Dispute_Management, Notification_Engine.
+  - Why it matters: Cross-team dispute visibility with alerts. Stakeholder focus: a field collections coach.
+- CORE01 [MISS] expected Core_Banking_Integration, API_Gateway, Transaction_History_Service, Data_Warehouse; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Core_Banking_Integration, Data_Warehouse, Transaction_History_Service.
+  - Why it matters: Core integrations plus observability. Stakeholder focus: a treasury operations manager.
+- CORE02 [PARTIAL] expected Core_Banking_Integration, API_Gateway, Transaction_History_Service, Data_Warehouse; model predicted Data_Warehouse. Hits: Data_Warehouse. Extra: none. Missed: API_Gateway, Core_Banking_Integration, Transaction_History_Service.
+  - Why it matters: Core integrations plus observability. Stakeholder focus: a treasury operations manager.
+- CORE03 [PARTIAL] expected Core_Banking_Integration, API_Gateway, Transaction_History_Service, Data_Warehouse; model predicted Transaction_History_Service. Hits: Transaction_History_Service. Extra: none. Missed: API_Gateway, Core_Banking_Integration, Data_Warehouse.
+  - Why it matters: Core integrations plus observability. Stakeholder focus: a treasury operations manager.
+- CORE04 [MISS] expected Core_Banking_Integration, API_Gateway, Transaction_History_Service, Data_Warehouse; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Core_Banking_Integration, Data_Warehouse, Transaction_History_Service.
+  - Why it matters: Core integrations plus observability. Stakeholder focus: a fintech BD lead.
+- CORE05 [MISS] expected Core_Banking_Integration, API_Gateway, Transaction_History_Service, Data_Warehouse; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Core_Banking_Integration, Data_Warehouse, Transaction_History_Service.
+  - Why it matters: Core integrations plus observability. Stakeholder focus: a payment rails architect.
+- CORE06 [PARTIAL] expected Core_Banking_Integration, API_Gateway, Transaction_History_Service, Data_Warehouse; model predicted Data_Warehouse. Hits: Data_Warehouse. Extra: none. Missed: API_Gateway, Core_Banking_Integration, Transaction_History_Service.
+  - Why it matters: Core integrations plus observability. Stakeholder focus: an integration engineer.
+- CORE07 [MISS] expected Core_Banking_Integration, API_Gateway, Transaction_History_Service, Data_Warehouse; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Core_Banking_Integration, Data_Warehouse, Transaction_History_Service.
+  - Why it matters: Core integrations plus observability. Stakeholder focus: a managed services vendor.
+- CORE08 [MISS] expected Core_Banking_Integration, API_Gateway, Transaction_History_Service, Data_Warehouse; model predicted Notification_Engine, SMS_Service. Hits: none. Extra: Notification_Engine, SMS_Service. Missed: API_Gateway, Core_Banking_Integration, Data_Warehouse, Transaction_History_Service.
+  - Why it matters: Core integrations plus observability. Stakeholder focus: a treasury operations manager.
+- CORE09 [MISS] expected Core_Banking_Integration, API_Gateway, Transaction_History_Service, Data_Warehouse; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Core_Banking_Integration, Data_Warehouse, Transaction_History_Service.
+  - Why it matters: Core integrations plus observability. Stakeholder focus: an integration engineer.
+- CORE10 [MISS] expected Core_Banking_Integration, API_Gateway, Transaction_History_Service, Data_Warehouse; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: API_Gateway, Core_Banking_Integration, Data_Warehouse, Transaction_History_Service.
+  - Why it matters: Core integrations plus observability. Stakeholder focus: a managed services vendor.
+- COMM01 [PARTIAL] expected Notification_Engine, Email_Communication_Module, SMS_Service, Customer_Portal_UI; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Customer_Portal_UI, Email_Communication_Module, SMS_Service.
+  - Why it matters: Omni-channel comms with governance. Stakeholder focus: a partner enablement coach.
+- COMM02 [PARTIAL] expected Notification_Engine, Email_Communication_Module, SMS_Service, Customer_Portal_UI; model predicted SMS_Service, Notification_Engine. Hits: Notification_Engine, SMS_Service. Extra: none. Missed: Customer_Portal_UI, Email_Communication_Module.
+  - Why it matters: Omni-channel comms with governance. Stakeholder focus: a fraud communications specialist.
+- COMM03 [PARTIAL] expected Notification_Engine, Email_Communication_Module, SMS_Service, Customer_Portal_UI; model predicted SMS_Service, Notification_Engine. Hits: Notification_Engine, SMS_Service. Extra: none. Missed: Customer_Portal_UI, Email_Communication_Module.
+  - Why it matters: Omni-channel comms with governance. Stakeholder focus: a marketing automation lead.
+- COMM04 [PARTIAL] expected Notification_Engine, Email_Communication_Module, SMS_Service, Customer_Portal_UI; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Customer_Portal_UI, Email_Communication_Module, SMS_Service.
+  - Why it matters: Omni-channel comms with governance. Stakeholder focus: a marketing automation lead.
+- COMM05 [PARTIAL] expected Notification_Engine, Email_Communication_Module, SMS_Service, Customer_Portal_UI; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Customer_Portal_UI, Email_Communication_Module, SMS_Service.
+  - Why it matters: Omni-channel comms with governance. Stakeholder focus: a customer experience director.
+- COMM06 [PARTIAL] expected Notification_Engine, Email_Communication_Module, SMS_Service, Customer_Portal_UI; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Customer_Portal_UI, Email_Communication_Module, SMS_Service.
+  - Why it matters: Omni-channel comms with governance. Stakeholder focus: a marketing automation lead.
+- COMM07 [PARTIAL] expected Notification_Engine, Email_Communication_Module, SMS_Service, Customer_Portal_UI; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Customer_Portal_UI, Email_Communication_Module, SMS_Service.
+  - Why it matters: Omni-channel comms with governance. Stakeholder focus: a partner enablement coach.
+- COMM08 [PARTIAL] expected Notification_Engine, Email_Communication_Module, SMS_Service, Customer_Portal_UI; model predicted Notification_Engine. Hits: Notification_Engine. Extra: none. Missed: Customer_Portal_UI, Email_Communication_Module, SMS_Service.
+  - Why it matters: Omni-channel comms with governance. Stakeholder focus: a partner enablement coach.
+- COMM09 [PARTIAL] expected Notification_Engine, Email_Communication_Module, SMS_Service, Customer_Portal_UI; model predicted Notification_Engine, SMS_Service. Hits: Notification_Engine, SMS_Service. Extra: none. Missed: Customer_Portal_UI, Email_Communication_Module.
+  - Why it matters: Omni-channel comms with governance. Stakeholder focus: a partner enablement coach.
+- COMM10 [PARTIAL] expected Notification_Engine, Email_Communication_Module, SMS_Service, Customer_Portal_UI; model predicted Notification_Engine, SMS_Service. Hits: Notification_Engine, SMS_Service. Extra: none. Missed: Customer_Portal_UI, Email_Communication_Module.
+  - Why it matters: Omni-channel comms with governance. Stakeholder focus: a fraud communications specialist.
+- REG01 [MISS] expected Rule_Engine, Reporting_Service, KYC_Service, Data_Warehouse; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Data_Warehouse, KYC_Service, Reporting_Service, Rule_Engine.
+  - Why it matters: Regulatory control room scenarios. Stakeholder focus: an AML investigator.
+- REG02 [MISS] expected Rule_Engine, Reporting_Service, KYC_Service, Data_Warehouse; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Data_Warehouse, KYC_Service, Reporting_Service, Rule_Engine.
+  - Why it matters: Regulatory control room scenarios. Stakeholder focus: an AML investigator.
+- REG03 [MISS] expected Rule_Engine, Reporting_Service, KYC_Service, Data_Warehouse; model predicted Notification_Engine, SMS_Service. Hits: none. Extra: Notification_Engine, SMS_Service. Missed: Data_Warehouse, KYC_Service, Reporting_Service, Rule_Engine.
+  - Why it matters: Regulatory control room scenarios. Stakeholder focus: a chief compliance officer.
+- REG04 [MISS] expected Rule_Engine, Reporting_Service, KYC_Service, Data_Warehouse; model predicted Notification_Engine, SMS_Service, Agent_Dashboard. Hits: none. Extra: Agent_Dashboard, Notification_Engine, SMS_Service. Missed: Data_Warehouse, KYC_Service, Reporting_Service, Rule_Engine.
+  - Why it matters: Regulatory control room scenarios. Stakeholder focus: a chief compliance officer.
+- REG05 [MISS] expected Rule_Engine, Reporting_Service, KYC_Service, Data_Warehouse; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Data_Warehouse, KYC_Service, Reporting_Service, Rule_Engine.
+  - Why it matters: Regulatory control room scenarios. Stakeholder focus: a chief compliance officer.
+- REG06 [MISS] expected Rule_Engine, Reporting_Service, KYC_Service, Data_Warehouse; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Data_Warehouse, KYC_Service, Reporting_Service, Rule_Engine.
+  - Why it matters: Regulatory control room scenarios. Stakeholder focus: a risk technology manager.
+- REG07 [MISS] expected Rule_Engine, Reporting_Service, KYC_Service, Data_Warehouse; model predicted Notification_Engine, SMS_Service. Hits: none. Extra: Notification_Engine, SMS_Service. Missed: Data_Warehouse, KYC_Service, Reporting_Service, Rule_Engine.
+  - Why it matters: Regulatory control room scenarios. Stakeholder focus: a chief compliance officer.
+- REG08 [MISS] expected Rule_Engine, Reporting_Service, KYC_Service, Data_Warehouse; model predicted Notification_Engine, SMS_Service. Hits: none. Extra: Notification_Engine, SMS_Service. Missed: Data_Warehouse, KYC_Service, Reporting_Service, Rule_Engine.
+  - Why it matters: Regulatory control room scenarios. Stakeholder focus: a risk technology manager.
+- REG09 [MISS] expected Rule_Engine, Reporting_Service, KYC_Service, Data_Warehouse; model predicted Notification_Engine. Hits: none. Extra: Notification_Engine. Missed: Data_Warehouse, KYC_Service, Reporting_Service, Rule_Engine.
+  - Why it matters: Regulatory control room scenarios. Stakeholder focus: a risk technology manager.
+- REG10 [MISS] expected Rule_Engine, Reporting_Service, KYC_Service, Data_Warehouse; model predicted Notification_Engine, SMS_Service. Hits: none. Extra: Notification_Engine, SMS_Service. Missed: Data_Warehouse, KYC_Service, Reporting_Service, Rule_Engine.
+  - Why it matters: Regulatory control room scenarios. Stakeholder focus: an AML investigator.

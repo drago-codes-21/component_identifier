@@ -1,0 +1,302 @@
+{
+  "metrics": {
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "subset_accuracy": 1.0,
+    "hamming_loss": 0.0,
+    "avg_components_per_story": 3.246666669845581,
+    "per_label": [
+      {
+        "label": "API_Gateway",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 36
+      },
+      {
+        "label": "Agent_Dashboard",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 55
+      },
+      {
+        "label": "Authentication_Service",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 24
+      },
+      {
+        "label": "Collections_Workflow",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 47
+      },
+      {
+        "label": "Core_Banking_Integration",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 28
+      },
+      {
+        "label": "Credit_Score_Engine",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 19
+      },
+      {
+        "label": "Customer_Portal_UI",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 48
+      },
+      {
+        "label": "Customer_Profile_Service",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 42
+      },
+      {
+        "label": "Data_Warehouse",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 49
+      },
+      {
+        "label": "Dispute_Management",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 34
+      },
+      {
+        "label": "Document_Upload_Service",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 36
+      },
+      {
+        "label": "Email_Communication_Module",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 71
+      },
+      {
+        "label": "KYC_Service",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 31
+      },
+      {
+        "label": "Loan_Module",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 42
+      },
+      {
+        "label": "Notification_Engine",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 110
+      },
+      {
+        "label": "Payment_Gateway",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 57
+      },
+      {
+        "label": "Reporting_Service",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 50
+      },
+      {
+        "label": "Rule_Engine",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 63
+      },
+      {
+        "label": "SMS_Service",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 73
+      },
+      {
+        "label": "Transaction_History_Service",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 59
+      }
+    ]
+  },
+  "metadata": {
+    "model_dir": "C:\\Users\\nalaw\\Sarthak\\ML\\COMP_IDENTIF\\component_identifier\\models\\distilbert_component_classifier",
+    "train_path": "C:\\Users\\nalaw\\Sarthak\\ML\\COMP_IDENTIF\\component_identifier\\data\\train.csv",
+    "num_samples": 300,
+    "num_labels": 20,
+    "threshold": 0.5,
+    "eval_loss": null
+  },
+  "per_label": [
+    {
+      "label": "API_Gateway",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 36
+    },
+    {
+      "label": "Agent_Dashboard",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 55
+    },
+    {
+      "label": "Authentication_Service",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 24
+    },
+    {
+      "label": "Collections_Workflow",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 47
+    },
+    {
+      "label": "Core_Banking_Integration",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 28
+    },
+    {
+      "label": "Credit_Score_Engine",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 19
+    },
+    {
+      "label": "Customer_Portal_UI",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 48
+    },
+    {
+      "label": "Customer_Profile_Service",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 42
+    },
+    {
+      "label": "Data_Warehouse",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 49
+    },
+    {
+      "label": "Dispute_Management",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 34
+    },
+    {
+      "label": "Document_Upload_Service",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 36
+    },
+    {
+      "label": "Email_Communication_Module",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 71
+    },
+    {
+      "label": "KYC_Service",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 31
+    },
+    {
+      "label": "Loan_Module",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 42
+    },
+    {
+      "label": "Notification_Engine",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 110
+    },
+    {
+      "label": "Payment_Gateway",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 57
+    },
+    {
+      "label": "Reporting_Service",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 50
+    },
+    {
+      "label": "Rule_Engine",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 63
+    },
+    {
+      "label": "SMS_Service",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 73
+    },
+    {
+      "label": "Transaction_History_Service",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 59
+    }
+  ]
+}

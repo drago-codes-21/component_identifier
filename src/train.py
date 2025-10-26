@@ -1,4 +1,9 @@
 import argparse
+import json
+import os
+import hashlib
+import random
+import subprocess
 from pathlib import Path
 from typing import Dict, Tuple
 import numpy as np
@@ -50,6 +55,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--weight_decay", type=float, default=0.01)
     parser.add_argument("--val_split", type=float, default=0.1)
     parser.add_argument("--threshold", type=float, default=0.5, help="Decision threshold for validation metrics.")
+    parser.add_argument("--seed", type=int, default=42, help="Random seed for reproducibility.")
     return parser.parse_args()
 
 
@@ -140,6 +146,16 @@ def create_trainer(
 
 def main():
     args = parse_args()
+    # Reproducibility
+    try:
+        from transformers import set_seed  # type: ignore
+        set_seed(args.seed)
+    except Exception:
+        pass
+    random.seed(args.seed)
+    np.random.seed(args.seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(args.seed)
     tokenizer = DistilBertTokenizerFast.from_pretrained(args.model_name)
     train_dataset, val_dataset, label2id, id2label = build_datasets(
         tokenizer=tokenizer,
@@ -169,6 +185,45 @@ def main():
     trainer.save_model(args.output_dir)
     tokenizer.save_pretrained(args.output_dir)
     save_label_index(Path(args.output_dir), label2id)
+
+    # Evaluate and persist run metadata for lightweight tracking
+    metrics = trainer.evaluate()
+    # Also include our micro metrics computed during eval
+    metrics_path = Path(args.output_dir) / "metrics.json"
+    with metrics_path.open("w", encoding="utf-8") as fp:
+        json.dump(metrics, fp, indent=2)
+
+    # Save training args and environment info
+    run_info = {
+        "args": vars(args),
+        "model_name": args.model_name,
+        "num_labels": len(label2id),
+    }
+
+    # Attach git commit if available
+    try:
+        commit = (
+            subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], cwd=str(PROJECT_ROOT))
+            .decode("utf-8")
+            .strip()
+        )
+        run_info["git_commit"] = commit
+    except Exception:
+        run_info["git_commit"] = None
+
+    # Attach data hash for traceability
+    try:
+        hasher = hashlib.sha256()
+        with open(args.train_path, "rb") as f:
+            for chunk in iter(lambda: f.read(8192), b""):
+                hasher.update(chunk)
+        run_info["data_sha256"] = hasher.hexdigest()
+    except Exception:
+        run_info["data_sha256"] = None
+
+    run_info_path = Path(args.output_dir) / "run_info.json"
+    with run_info_path.open("w", encoding="utf-8") as fp:
+        json.dump(run_info, fp, indent=2)
 
 
 if __name__ == "__main__":
