@@ -38,9 +38,9 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--model_name",
+        "--base_model_path",
         type=str,
-        default="distilbert-base-uncased",
-        help="Base Hugging Face checkpoint to fine-tune.",
+        help="Path to the directory containing the pre-trained base model and tokenizer.",
     )
     parser.add_argument(
         "--output_dir",
@@ -156,16 +156,15 @@ def main():
     np.random.seed(args.seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(args.seed)
-    tokenizer = DistilBertTokenizerFast.from_pretrained(args.model_name)
+    tokenizer = DistilBertTokenizerFast.from_pretrained(args.base_model_path)
     train_dataset, val_dataset, label2id, id2label = build_datasets(
         tokenizer=tokenizer,
         csv_path=args.train_path,
         max_length=args.max_length,
         val_split=args.val_split,
     )
-
     model = DistilBertForSequenceClassification.from_pretrained(
-        args.model_name,
+        args.base_model_path,
         num_labels=len(label2id),
         problem_type="multi_label_classification",
         id2label=id2label,
@@ -176,7 +175,7 @@ def main():
         model=model,
         tokenizer=tokenizer,
         train_dataset=train_dataset,
-        val_dataset=val_dataset,
+        val_dataset=val_dataset, 
         args=args,
     )
 
@@ -196,7 +195,7 @@ def main():
     # Save training args and environment info
     run_info = {
         "args": vars(args),
-        "model_name": args.model_name,
+        "base_model_path": args.base_model_path,
         "num_labels": len(label2id),
     }
 
