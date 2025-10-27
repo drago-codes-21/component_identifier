@@ -23,8 +23,8 @@ def load_label_names(model_dir: Path, config: Optional[object] = None) -> List[s
 
 def load_assets(model_dir: str) -> Tuple[DistilBertForSequenceClassification, DistilBertTokenizerFast, List[str]]:
     model_path = Path(model_dir)
-    tokenizer = DistilBertTokenizerFast.from_pretrained(model_path)
-    model = DistilBertForSequenceClassification.from_pretrained(model_path)
+    tokenizer = DistilBertTokenizerFast.from_pretrained(model_path, local_files_only=True)
+    model = DistilBertForSequenceClassification.from_pretrained(model_path, local_files_only=True)
     model.to("cpu")
     model.eval()
     labels = load_label_names(model_path, model.config)

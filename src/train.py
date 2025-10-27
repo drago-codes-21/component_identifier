@@ -156,7 +156,7 @@ def main():
     np.random.seed(args.seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(args.seed)
-    tokenizer = DistilBertTokenizerFast.from_pretrained(args.base_model_path)
+    tokenizer = DistilBertTokenizerFast.from_pretrained(args.base_model_path, local_files_only=True)
     train_dataset, val_dataset, label2id, id2label = build_datasets(
         tokenizer=tokenizer,
         csv_path=args.train_path,
@@ -164,7 +164,7 @@ def main():
         val_split=args.val_split,
     )
     model = DistilBertForSequenceClassification.from_pretrained(
-        args.base_model_path,
+        args.base_model_path, local_files_only=True,
         num_labels=len(label2id),
         problem_type="multi_label_classification",
         id2label=id2label,
